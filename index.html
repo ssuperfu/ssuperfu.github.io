@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Mr.Rich</title>
+  <title>Transparent Space</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   
@@ -11,15 +11,15 @@
   
   <meta name="description" content="Desperate life in chaos, not to the vassal.">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Mr.Rich">
+<meta property="og:title" content="Transparent Space">
 <meta property="og:url" content="http://yoursite.com/index.html">
-<meta property="og:site_name" content="Mr.Rich">
+<meta property="og:site_name" content="Transparent Space">
 <meta property="og:description" content="Desperate life in chaos, not to the vassal.">
 <meta property="og:locale" content="en_US">
-<meta property="article:author" content="Superfu">
+<meta property="article:author" content="Mr.Rich">
 <meta name="twitter:card" content="summary">
   
-    <link rel="alternate" href="/atom.xml" title="Mr.Rich" type="application/atom+xml">
+    <link rel="alternate" href="/atom.xml" title="Transparent Space" type="application/atom+xml">
   
 
   
@@ -64,8 +64,6 @@
   
   
   
-    <link rel="stylesheet" href="/css/vdonate.css" >
-  
 
 <meta name="generator" content="Hexo 4.2.1"></head>
 
@@ -108,48 +106,6 @@
                         } else {
                           imageTag0.style.height = document.body.clientHeight + "px";
                           imageTag0.style.marginLeft = -(document.body.clientHeight * img0.width / img0.height - document.body.clientWidth) / 2 + "px";
-                        }
-                      };
-                  </script>
-                
-                  
-                    <div class="item">
-                  
-                    <img id="carousel-img1" src="/css/images/sample.jpg">
-                  </div>
-
-                  <!-- 自适应大图 -->
-                  <script>
-                      var img1 = new Image();
-                      var imageTag1 = document.getElementById("carousel-img1");
-                      img1.src = imageTag1.src;
-                      img1.onload=function(){
-                        if (img1.width / img1.height <= document.body.clientWidth / document.body.clientHeight) {
-                          imageTag1.style.width = document.body.clientWidth + "px";
-                        } else {
-                          imageTag1.style.height = document.body.clientHeight + "px";
-                          imageTag1.style.marginLeft = -(document.body.clientHeight * img1.width / img1.height - document.body.clientWidth) / 2 + "px";
-                        }
-                      };
-                  </script>
-                
-                  
-                    <div class="item">
-                  
-                    <img id="carousel-img2" src="https://source.unsplash.com/collection/954550/1920x1080">
-                  </div>
-
-                  <!-- 自适应大图 -->
-                  <script>
-                      var img2 = new Image();
-                      var imageTag2 = document.getElementById("carousel-img2");
-                      img2.src = imageTag2.src;
-                      img2.onload=function(){
-                        if (img2.width / img2.height <= document.body.clientWidth / document.body.clientHeight) {
-                          imageTag2.style.width = document.body.clientWidth + "px";
-                        } else {
-                          imageTag2.style.height = document.body.clientHeight + "px";
-                          imageTag2.style.marginLeft = -(document.body.clientHeight * img2.width / img2.height - document.body.clientWidth) / 2 + "px";
                         }
                       };
                   </script>
@@ -214,9 +170,9 @@
 
         
           <div class="homelogoback"  style="border: 1px solid #404040;" >
-            <h1><a href="#content" id="logo">Mr.Rich</a></h1>
+            <h1><a href="#content" id="logo">Transparent Space</a></h1>
             <h3>Desperate life in chaos, not to the vassal.</h3>
-            <h5>Superfu</h5>
+            <h5>Mr.Rich</h5>
             <!-- <p><a href="https://github.com/iTimeTraveler" target="_blank">Github</a></p> -->
           </div>
         
@@ -267,7 +223,7 @@
         
           <section id="main" style="float:none;">
   
-    <article id="post-bookSim2Learning"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-Systemc Learning"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -275,7 +231,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/06/13/bookSim2Learning/">bookSim2Learning</a>
+      <a class="article-title" href="/2020/06/14/Systemc%20Learning/">Systemc Learning</a>
     </h1>
   
 
@@ -283,8 +239,8 @@
     
     <div class="article-meta">
       
-	<a href="/2020/06/13/bookSim2Learning/" class="article-date">
-	  <time datetime="2020-06-13T14:51:07.746Z" itemprop="datePublished">2020-06-13</time>
+	<a href="/2020/06/14/Systemc%20Learning/" class="article-date">
+	  <time datetime="2020-06-14T02:07:14.582Z" itemprop="datePublished">2020-06-14</time>
 	</a>
 
       
@@ -295,26 +251,42 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          bookSim2源码阅读笔记Chao Fu 2020/6/6
+          
+
+
+SystemC语言学习笔记
+背景
+SystemC语法
+声明子模块
+几种处理过程的对比
+
+
+模块间调用
+仿真测试
+信号发生器
+仿真开始
 
 
 
-源码结构
-NoC配置文件
-仿真阶段
-Network初始化与连接
-Traffic-manager的初始化
-正式开始仿真
-每一步仿真仿真器做的事
+
+SystemC库的编译
+在windows下编译systemC库
+在linux下编译systemc库
 
 
-小结
+Visual Studio 2019的SystemC环境配置
+Visual Studio Code的SystemC环境配置
+VCD波形文件的使用
+总结
+参考内容
 
 
-bookSim2是一款时钟周期级别（cycle-accurate）的NoC软件仿真器，这款仿真器模块化了NoC的各个组成部分，支持多种拓扑结构、路由算法、路由器结构、仲裁器结构与算法等。bookSIm2的顶层分为Traffic-manager和Network两个部分，T...
+
+
+背景最近在看一些仿真器的源码，有些开源项目使用了SystemC来开发，为...
         </p>
         <p class="article-more-link">
-          <a href="/2020/06/13/bookSim2Learning/#more">Read More</a>
+          <a href="/2020/06/14/Systemc%20Learning/#more">Read More</a>
         </p>
       
     </div>
@@ -333,7 +305,7 @@ bookSim2是一款时钟周期级别（cycle-accurate）的NoC软件仿真器，�
 
 
   
-    <article id="post-hello-world"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-Simulator Platform Research"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -341,7 +313,7 @@ bookSim2是一款时钟周期级别（cycle-accurate）的NoC软件仿真器，�
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/06/13/hello-world/">Hello World</a>
+      <a class="article-title" href="/2020/06/14/Simulator%20Platform%20Research/">Simulator Platform Research</a>
     </h1>
   
 
@@ -349,8 +321,8 @@ bookSim2是一款时钟周期级别（cycle-accurate）的NoC软件仿真器，�
     
     <div class="article-meta">
       
-	<a href="/2020/06/13/hello-world/" class="article-date">
-	  <time datetime="2020-06-13T12:38:44.292Z" itemprop="datePublished">2020-06-13</time>
+	<a href="/2020/06/14/Simulator%20Platform%20Research/" class="article-date">
+	  <time datetime="2020-06-14T02:07:14.578Z" itemprop="datePublished">2020-06-14</time>
 	</a>
 
       
@@ -361,11 +333,83 @@ bookSim2是一款时钟周期级别（cycle-accurate）的NoC软件仿真器，�
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick StartCreate a new post1$ hexo new "My New Post...
+          Special Simulator
+
+Booksim2
+public time: 2013/7/15
+allows for more network geometries but is also driven by synthetic traffic patterns.
+open-source
+article
+Netrace
+a trace-based network simulation platform that encodes dependencies between network...
         </p>
         <p class="article-more-link">
-          <a href="/2020/06/13/hello-world/#more">Read More</a>
+          <a href="/2020/06/14/Simulator%20Platform%20Research/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-BookSim2 Learning"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/06/13/BookSim2%20Learning/">BookSim2 Learning</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/06/13/BookSim2%20Learning/" class="article-date">
+	  <time datetime="2020-06-13T14:51:07.746Z" itemprop="datePublished">2020-06-13</time>
+	</a>
+
+      
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          
+
+
+源码结构
+NoC配置文件
+仿真阶段
+Network初始化与连接
+Traffic-manager的初始化
+正式开始仿真
+每一步仿真仿真器做的事
+
+
+小结
+
+
+bookSim2是一款时钟周期级别（cycle-accurate）的NoC软件仿真器，这款仿真器模块化了NoC的各个组成部分，支持多种拓扑结构、路由算法、路由器结构、仲裁器结构与算法等。bookSIm2的顶层分为Traffic-manager和Network两个部分，Traffic-manager是Network的外围模块，负责给...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/06/13/BookSim2%20Learning/#more">Read More</a>
         </p>
       
     </div>
@@ -397,8 +441,8 @@ Quick StartCreate a new post1$ hexo new "My New Post...
 
   <div class="container">
       	<div class="row">
-	      <p> Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/iTimeTraveler/hexo-theme-hiker" target="_blank">Hexo-theme-hiker</a> </p>
-	      <p id="copyRightEn">Copyright &copy; 2013 - 2020 Mr.Rich All Rights Reserved.</p>
+	      <p> Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></p>
+	      <p id="copyRightEn">Copyright &copy; 2019 - 2020 Transparent Space All Rights Reserved.</p>
 	      
 	      
     		<p class="busuanzi_uv">
@@ -557,10 +601,10 @@ Quick StartCreate a new post1$ hexo new "My New Post...
         </div>
          <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
           <div class="panel-body">
-            Mr.Rich
+            Transparent Space
           </div>
           <div class="panel-body">
-            Copyright © 2020 Superfu All Rights Reserved.
+            Copyright © 2020 Mr.Rich All Rights Reserved.
           </div>
         </div>
       </div>

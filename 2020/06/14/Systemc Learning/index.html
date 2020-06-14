@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>systemc learning | Transparent Space</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  
+  
+  <meta name="description" content="SystemC语言学习笔记 背景 SystemC语法 声明子模块 几种处理过程的对比   模块间调用 仿真测试 信号发生器 仿真开始     SystemC库的编译 在windows下编译systemC库 在linux下编译systemc库   Visual Studio 2019的SystemC环境配置 Visual Studio Code的SystemC环境配置 VCD波形文件的使用 总">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Systemc Learning">
+<meta property="og:url" content="http://yoursite.com/2020/06/14/Systemc%20Learning/index.html">
+<meta property="og:site_name" content="Transparent Space">
+<meta property="og:description" content="SystemC语言学习笔记 背景 SystemC语法 声明子模块 几种处理过程的对比   模块间调用 仿真测试 信号发生器 仿真开始     SystemC库的编译 在windows下编译systemC库 在linux下编译systemc库   Visual Studio 2019的SystemC环境配置 Visual Studio Code的SystemC环境配置 VCD波形文件的使用 总">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-06-14T02:07:14.582Z">
+<meta property="article:modified_time" content="2020-06-14T02:08:52.060Z">
+<meta property="article:author" content="Mr.Rich">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Transparent Space" type="application/atom+xml">
+  
+
+  
+
+  <link rel="icon" href="/css/images/mylogo.jpg">
+  <link rel="apple-touch-icon" href="/css/images/mylogo.jpg">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt; src:url("/css/fonts/FuturaPTBold.otf") format("woff");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt-light; src:url("/css/fonts/FuturaPTBook.otf") format("woff");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt-italic; src:url("/css/fonts/FuturaPTBookOblique.otf") format("woff");font-weight:400;font-style:italic;}
+}
+
+  </style>
+  
+<link rel="stylesheet" href="/css/style.css">
+
+
+  
+<script src="/js/jquery-3.1.1.min.js"></script>
+
+  
+<script src="/js/bootstrap.js"></script>
+
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.css" >
+
+  
+    
+<link rel="stylesheet" href="/css/dialog.css">
+
+  
+
+  
+
+  
+    <link rel="stylesheet" href="/css/header-post.css" >
+  
+
+  
+  
+  
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+
+
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
+
+
+  
+  <div id="container">
+    <div id="wrap">
+      
+        <header>
+
+    <div id="allheader" class="navbar navbar-default navbar-static-top" role="navigation">
+        <div class="navbar-inner">
+          
+          <div class="container"> 
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+
+            
+              <a class="brand" style="
+                 margin-top: 0px;"  
+                href="#" data-toggle="modal" data-target="#myModal" >
+                  <img width="124px" height="124px" alt="Hike News" src="/css/images/mylogo.jpg">
+              </a>
+            
+            
+            <div class="navbar-collapse collapse">
+              <ul class="hnav navbar-nav">
+                
+                  <li> <a class="main-nav-link" href="/">Home</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/archives">Archives</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/categories">Categories</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/tags">Tags</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/about">About</a> </li>
+                
+                  <li><div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+</div></li>
+            </div>
+          </div>
+                
+      </div>
+    </div>
+
+</header>
+
+
+
+      
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;"><article id="post-Systemc Learning" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      Systemc Learning
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/06/14/Systemc%20Learning/" class="article-date">
+	  <time datetime="2020-06-14T02:07:14.582Z" itemprop="datePublished">2020-06-14</time>
+	</a>
+
+      
+      
+	<a class="article-views">
+	<span id="busuanzi_container_page_pv">
+		PV:<span id="busuanzi_value_page_pv"></span>
+	</span>
+	</a>
+
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
+
+<ul>
+<li><a href="#systemc语言学习笔记">SystemC语言学习笔记</a><ul>
+<li><a href="#背景">背景</a></li>
+<li><a href="#systemc语法">SystemC语法</a><ul>
+<li><a href="#声明子模块">声明子模块</a><ul>
+<li><a href="#几种处理过程的对比">几种处理过程的对比</a></li>
+</ul>
+</li>
+<li><a href="#模块间调用">模块间调用</a></li>
+<li><a href="#仿真测试">仿真测试</a><ul>
+<li><a href="#信号发生器">信号发生器</a></li>
+<li><a href="#仿真开始">仿真开始</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#systemc库的编译">SystemC库的编译</a><ul>
+<li><a href="#在windows下编译systemc库">在windows下编译systemC库</a></li>
+<li><a href="#在linux下编译systemc库">在linux下编译systemc库</a></li>
+</ul>
+</li>
+<li><a href="#visual-studio-2019的systemc环境配置">Visual Studio 2019的SystemC环境配置</a></li>
+<li><a href="#visual-studio-code的systemc环境配置">Visual Studio Code的SystemC环境配置</a></li>
+<li><a href="#vcd波形文件的使用">VCD波形文件的使用</a></li>
+<li><a href="#总结">总结</a></li>
+<li><a href="#参考内容">参考内容</a></li>
+</ul>
+</li>
+</ul>
+<!-- /TOC -->
+<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>最近在看一些仿真器的源码，有些开源项目使用了SystemC来开发，为了能够顺利地看下去这些代码，及时补充自己在这一块编程语言上的不足。由于SystemC是一个C++的类库，所以基础语法的学习还是很容易上手的，这篇文章就把我学习过程记录一下，方便日后回顾。</p>
+<h2 id="SystemC语法"><a href="#SystemC语法" class="headerlink" title="SystemC语法"></a>SystemC语法</h2><p>由于没有迫切地需要用SystemC来写项目，所以我只是粗略地了解了一下SystemC的语法，保证我能够看得懂别人的项目，至于更详细一点的语法可以看这个<a href="https://max.book118.com/html/2016/1219/74622459.shtm" target="_blank" rel="noopener">PPT</a>，概括地应该蛮详细（给自己留坑，有需求再学习）</p>
+<h3 id="声明子模块"><a href="#声明子模块" class="headerlink" title="声明子模块"></a>声明子模块</h3><p>和Verilog类似，使用SystemC也用模块的方式定义一些功能模块，每一个子模块使用C++中的一个类来声明，为了从视觉上看起来和硬件描述语言更像，SystemC库使用一个宏定义<code>SC_MODULE(&lt;module name&gt;)</code>替换对应的类声明，每一个子模块的类主要分成三个部分，分别是端口声明，功能描述以及功能注册，这一部分一般写在头文件<code>.h</code>中，对应的源文件用来描述具体的功能实现。</p>
+<ul>
+<li>端口声明</li>
+</ul>
+<p>首先要对模块的输入输出端口进行声明，一般使用<code>sc_in&lt;type&gt;</code>、<code>sc_out&lt;type&gt;</code>和<code>sc_inout&lt;type&gt;</code>3种端口类型，其中type为端口的数据类型，可以是C++中的一些数据类型，也可以是SystemC中自带的一些数据类型，如<code>sc_int&lt;WIDTH&gt;</code>等，其中WIDTH为数据位宽，一般时钟和复位型号的数据类型定义为布尔类型，即<code>sc_in&lt;bool&gt; clk,rst_n</code>。</p>
+<ul>
+<li>功能描述</li>
+</ul>
+<p>接下来是对模块的功能进行描述，以无参数函数的形式表示，这个功能描述就像是Verilog中的Always块，如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">void process();</span><br><span class="line">void rxProcess();		&#x2F;&#x2F; The receiving process</span><br><span class="line">void txProcess();		&#x2F;&#x2F; The transmitting process</span><br><span class="line">void perCycleUpdate();</span><br></pre></td></tr></table></figure>
+<p>一般我们只是在头文件中对需要用到的功能函数进行声明，然后在对应的源文件中实现功能的描述：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">void Router::process()</span><br><span class="line">&#123;</span><br><span class="line">    txProcess();</span><br><span class="line">    rxProcess();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在读写端口时，一般使用<code>.read()</code>读取输入端口的数据并使用<code>.write()</code>向输出端口写入数据，如:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">reset.read()</span><br><span class="line">...</span><br><span class="line">ack_rx[i].write(0)</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<p>在具体赋值时，功能描述中的赋值都是阻塞赋值，这一点在具体写代码的时候需要注意。</p>
+<ul>
+<li>功能注册</li>
+</ul>
+<p>最后对我们描述的功能函数进行注册，实际是编写模块类对应的构造函数，在构造函数中我们需要注册功能，描述连接关系以及说明敏感列表，同样为了视觉上更直观，构造函数也用宏定义<code>SC_CTOR(&lt;module name&gt;)</code>进行了一个包装，具体代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">SC_CTOR(Router) &#123;</span><br><span class="line">		SC_METHOD(process);</span><br><span class="line">		sensitive &lt;&lt; reset;</span><br><span class="line">		sensitive &lt;&lt; clock.pos();</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<p>在这段代码中，我们写了Router的构造函数，并将其process功能使用<code>SC_METHOD()</code>进行注册，我们描述的功能需要经过METHOD（或THREAD等）的方法注册才作为模块的一个功能。在构造函数中还需要添加该功能的敏感变量，这和Always块同理，当敏感变量发生变化时，对应的功能模块就会执行，敏感变量分为电平敏感和边沿敏感，对应的代码为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sensitive &lt;&lt;</span><br><span class="line">sensitive_pos &lt;&lt;</span><br><span class="line">sensitive_neg &lt;&lt;</span><br></pre></td></tr></table></figure>
+<p>至此，一个功能模块的定义与描述结束。</p>
+<h4 id="几种处理过程的对比"><a href="#几种处理过程的对比" class="headerlink" title="几种处理过程的对比"></a>几种处理过程的对比</h4><p>在上面的案例中，我给出了一个<code>SC_METHOD()</code>的一段内容，在SystemC中有三种类型的处理过程：</p>
+<ul>
+<li>Methods： <code>SC_METHOD()</code>，这是用来描述组合逻辑的，由输入信号的变化触发，不能包含无限循环，以及<code>wait()</code>等；</li>
+<li>Threads： <code>SC_TEREAD()</code>，这种描述可以用在基本上所有地方，由输入信号的变化触发，但可以在两次调用时保存控制状态，如可以使用<code>wait()</code>，在调用时，进程被挂起等待下一次触发继续执行；</li>
+<li>Clock Threads： 时<code>SC_THREAD()</code> 的一种特殊情况，可以产生更好的行为综合效果，只能由时钟信号沿触发。<h3 id="模块间调用"><a href="#模块间调用" class="headerlink" title="模块间调用"></a>模块间调用</h3>对于一个层次较高的模块或者是顶层模块，其需要调用其他子模块，并进行相关的连接，模块之间连接的定义是在构造函数中描述的，即<code>SC_CTOR()</code>，我看的工程比较复杂，这里贴一个网上简单的例子：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">SC_MODULE(matrix_vector_mul) &#123;</span><br><span class="line"></span><br><span class="line">...</span><br><span class="line">    vector_mul *pe[VEC_NUM];</span><br><span class="line"></span><br><span class="line">    SC_CTOR(matrix_vector_mul) &#123;</span><br><span class="line">        std::ostringstream pe_name;</span><br><span class="line">        for (int i &#x3D; 0; i &lt; VEC_NUM; ++i) &#123;</span><br><span class="line">            pe_name &lt;&lt; &quot;pe&quot; &lt;&lt; i;</span><br><span class="line">            pe[i] &#x3D; new vector_mul(pe_name.str().c_str());</span><br><span class="line">            pe[i]-&gt;clk(clk);</span><br><span class="line">            pe[i]-&gt;rst_n(rst_n);</span><br><span class="line">            for (int j &#x3D; 0; j &lt; VEC_WIDTH; ++j) &#123;</span><br><span class="line">                pe[i]-&gt;vec1[j](matrix[i][j]);</span><br><span class="line">                pe[i]-&gt;vec2[j](vector_in[j]);</span><br><span class="line">            &#125;</span><br><span class="line">            pe[i]-&gt;vec_o(vector_out[i]);</span><br><span class="line">            pe_name.str(&quot;&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+从这个例子中我们可以看到，连接主要可以分为三个部分：</li>
+</ul>
+<ol>
+<li>声明模块指针，这个指针用来存储后面实例化的模块的地址</li>
+<li>实例化模块，在实例化模块时要保证每一个实例模块名字的唯一性</li>
+<li>连接各模块之间的接口<code>&lt;point&gt;-&gt;&lt;port name&gt;(&lt;signal name&gt;)</code></li>
+</ol>
+<p>以上，我们结束了模块间的连接。</p>
+<h3 id="仿真测试"><a href="#仿真测试" class="headerlink" title="仿真测试"></a>仿真测试</h3><p>在Verilog中我们会编写Testbench来对代码进行测试，同理，在SystemC中我们会使用主函数来调用对应的测试模块，测试之前首先要根据我们的需求，写一个信号产生的模块。</p>
+<h4 id="信号发生器"><a href="#信号发生器" class="headerlink" title="信号发生器"></a>信号发生器</h4><p>我们可以把我们在现实中测试电路时用到的信号发生器当作一个类似于电路一样的模块，在仿真时我们可以写一个简易的发生器来满足我们仿真测试的需求。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">void generate_reset(void) &#123;</span><br><span class="line">		rst_n.write(1);</span><br><span class="line">		wait(1,SC_NS);</span><br><span class="line">		rst_n.write(0);</span><br><span class="line">		wait(1,SC_NS);</span><br><span class="line">		rst_n.write(1);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">SC_CTOR(driver) &#123;</span><br><span class="line">		SC_THREAD(generate_input);</span><br><span class="line">		sensitive_neg &lt;&lt; clk;</span><br><span class="line">		SC_THREAD(generate_reset);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>部分代码如上，在实现信号发生器的功能函数时，我们可以使用<code>wait()</code>来进行阻塞，从而实现一个信号维持对应时间的电平状态。同时在写构造函数时，使用THREAD宏注册为功能，这一宏与METHOD的区别是这一种功能进程在仿真开始时运行，碰到wait()跳出，直到敏感列表中的信号再次触发这一进程，从上次跳出的wait()处继续运行。以复位信号的生成为例，由于<code>SC_METHOD</code>和<code>SC_THREAD</code>都是阻塞执行的，即在执行对应的函数时，其他函数无法进行，所以在执行<code>generate_reset()</code>函数时，其他函数暂停，那么在写高电平信号后，遇到<code>wait()</code>后，程序会跳出<code>generate_rest()</code>，转而执行其他函数，当其敏感信号，即时钟信号下降沿到来时，会继续执行上次跳出的位置后的语句，即<code>rst_n.write(0);</code>。</p>
+<h4 id="仿真开始"><a href="#仿真开始" class="headerlink" title="仿真开始"></a>仿真开始</h4><p>接下来就是写仿真主函数，主函数主要分为几个部分：信号声明、波形文件相关声明、模块实例化以及端口连接。</p>
+<ul>
+<li>信号声明</li>
+</ul>
+<p>在主函数中，我们不需要声明端口，但是需要提前声明连接各模块所需要的信号线，时钟信号有专门的声明语句，具体如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sc_clock clk(&quot;clk&quot;,10,SC_NS);</span><br><span class="line">sc_signal&lt;bool&gt; rst_n;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>波形文件相关声明</li>
+</ul>
+<p>VCD波形文件是我们用来查看仿真结果的重要文件，SystemC直接生成VCD文件，首先我们需要创建一个波形文件并进行一些初始化操作：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sc_trace_file *fp;                  &#x2F;&#x2F; Create VCD file</span><br><span class="line">fp&#x3D;sc_create_vcd_trace_file(&quot;wave&quot;);&#x2F;&#x2F; open(fp), create wave.vcd file</span><br><span class="line">fp-&gt;set_time_unit(1, SC_NS);        &#x2F;&#x2F; set tracing resolution to ns</span><br></pre></td></tr></table></figure>
+<p>然后，我们需要在仿真开始前指定波形文件需要跟踪的信号：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sc_trace(fp,clk,&quot;clk&quot;);</span><br><span class="line">sc_trace(fp,rst_n,&quot;rst_n&quot;);</span><br></pre></td></tr></table></figure>
+<p>一切准备就绪后，我们执行<code>sc_start()</code>开始仿真，执行时间为1000ns。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sc_start(1000,SC_NS);</span><br><span class="line">sc_close_vcd_trace_file(fp);        &#x2F;&#x2F; close(fp)</span><br></pre></td></tr></table></figure>
+<p>仿真结束后，关闭VCD波形记录文件。</p>
+<ul>
+<li>模块实例化&amp;端口连接</li>
+</ul>
+<p>有两种方法可以实例化模块，一种是和子模块一样，先声明指针，再创建对象：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; NoC instance</span><br><span class="line">n &#x3D; new NoC(&quot;NoC&quot;);</span><br></pre></td></tr></table></figure>
+<p>也可以直接声明对象：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">matrix_vector_mul dut(&quot;dut&quot;);</span><br></pre></td></tr></table></figure>
+<p>这两种方法均可。</p>
+<p>实例化完成需要的模块后，把测试模块和信号发生模块通过声明的信号线连接起来。</p>
+<h2 id="SystemC库的编译"><a href="#SystemC库的编译" class="headerlink" title="SystemC库的编译"></a>SystemC库的编译</h2><ul>
+<li>下载库源码<br>从<a href="https://accellera.org/downloads/standards/systemc" target="_blank" rel="noopener">这里</a>下载systemc库的源码，linux选择<code>tar.gz</code>格式，windows选择<code>.zip</code>格式<h3 id="在windows下编译systemC库"><a href="#在windows下编译systemC库" class="headerlink" title="在windows下编译systemC库"></a>在windows下编译systemC库</h3>在解压完成的目录中，打开<code>systemc-2.3.3\msvc10\SystemC</code>目录下的<code>SystemC.sln</code>，用高版本的vs打开可能需要重定向，按照提示走就可以，然后进行build，就可以在<code>Debug</code>目录下看到生成的<code>SystemC.lib</code>文件<h3 id="在linux下编译systemc库"><a href="#在linux下编译systemc库" class="headerlink" title="在linux下编译systemc库"></a>在linux下编译systemc库</h3></li>
+</ul>
+<ol>
+<li>首先完成解压</li>
+<li>创建临时文件夹<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd systemc-2.3.3 &gt;mkdir objdir &gt;cd objdir</span><br></pre></td></tr></table></figure></li>
+<li>指定安装目录<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">..&#x2F;configure -prefix&#x3D;&#x2F;home&#x2F;user&#x2F;systemc</span><br></pre></td></tr></table></figure>
+要保证prefix指向的位置文件夹存在。这个指令执行完毕，目标文件夹下并未产生文件。</li>
+<li>make&amp;install<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">make</span><br><span class="line">make install</span><br></pre></td></tr></table></figure>
+这两步执行完毕后，目标文件夹下出现安装文件</li>
+</ol>
+<p>至此完成</p>
+<h2 id="Visual-Studio-2019的SystemC环境配置"><a href="#Visual-Studio-2019的SystemC环境配置" class="headerlink" title="Visual Studio 2019的SystemC环境配置"></a>Visual Studio 2019的SystemC环境配置</h2><p>在正常创建完工程后，对工程的属性做如下修改：</p>
+<p>C/C++：</p>
+<ol>
+<li>常规&gt;&gt;附加包含目录：添加 C:\systemc-2.3.3\src 项</li>
+<li>语言&gt;&gt;启用运行时类型信息：选择“是”</li>
+<li>命令行&gt;&gt;添加 /vmg /D_CRT_SECURE_NO_DEPRECATE</li>
+</ol>
+<p>链接器：</p>
+<ol>
+<li>常规&gt;&gt;附加库目录：添加 C:\systemc-2.3.3\msvc10\SystemC\Debug 项</li>
+<li>输入&gt;&gt;附加依赖项：添加 SystemC.lib</li>
+</ol>
+<p>以上内容直接从<a href="https://blog.csdn.net/sinat_15000719/article/details/86568349" target="_blank" rel="noopener">网上</a>找来的。</p>
+<h2 id="Visual-Studio-Code的SystemC环境配置"><a href="#Visual-Studio-Code的SystemC环境配置" class="headerlink" title="Visual Studio Code的SystemC环境配置"></a>Visual Studio Code的SystemC环境配置</h2><p>我一般会使用Vscode查看代码，对于带有第三方库的工程，如<code>systemC</code>等，如果不添加库的路径，无法在Vscode中查看函数的调用关系，我的解决方案是使用<code>vcpkg</code>工具，方法：</p>
+<ul>
+<li>git clone <a href="https://github.com/microsoft/vcpkg" target="_blank" rel="noopener">https://github.com/microsoft/vcpkg</a></li>
+<li>执行Vcpkg工程目录下的“bootstrap-vcpkg.bat”命令</li>
+<li>查看Vcpkg支持的开源库列表： <code>.\vcpkg.exe search</code></li>
+<li>安装库：<code>.\vcpkg.exe install libname</code></li>
+<li>列出已经安装的开源库：<code>.\vcpkg.exe list</code></li>
+<li>集成到全局：<code>.\vcpkg integrate install</code></li>
+<li>在Vscode的configurations中添加包路径（贪图方法的方法，每一个包都要加路径有点麻烦，以后有空再研究）</li>
+</ul>
+<h2 id="VCD波形文件的使用"><a href="#VCD波形文件的使用" class="headerlink" title="VCD波形文件的使用"></a>VCD波形文件的使用</h2><p>因为对modelsim比较熟悉，所以最先想到了使用modelsim来打开VCD格式的文件，方法如下：</p>
+<ol>
+<li><p>在Modelsim中的控制台输入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vcd2wlf file1.vcd file2.wlf</span><br></pre></td></tr></table></figure>
+<p>其中，file1是要转换的.vcd文件名，file2是转换后的文件名。转换完成后该文件位于当前Modelsim工程目录下;</p>
+</li>
+<li><p>在Modelsim中File-&gt;Open-&gt;file2.wlf-&gt;在object标签中选取需要观察的信号添加到波形窗即可，后面同一般的Modelsim工程仿真</p>
+</li>
+</ol>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>这篇文章总结了我这几天从零接触SystemC的一些学习记录，个人觉得了解这些基本上可以看懂一些用SystemC写的工程了，但是如果要自己用SystemC写工程可能还需要详细看一看SystemC的具体语法。所以写这篇文章一是为了让自己学习过程有一个记录，同时又可以给有相同需求的做一个相关内容的整合。</p>
+<h2 id="参考内容"><a href="#参考内容" class="headerlink" title="参考内容"></a>参考内容</h2><p>[1]<a href="https://www.jianshu.com/p/d2a7d09e8076" target="_blank" rel="noopener">SystemC入门笔记</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+        
+      
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2020/06/14/Simulator%20Platform%20Research/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Simulator Platform Research</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- Table of Contents -->
+
+  <aside id="toc-sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">Contents</strong>
+    
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#背景"><span class="nav-number">1.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SystemC语法"><span class="nav-number">2.</span> <span class="nav-text">SystemC语法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#声明子模块"><span class="nav-number">2.1.</span> <span class="nav-text">声明子模块</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#几种处理过程的对比"><span class="nav-number">2.1.1.</span> <span class="nav-text">几种处理过程的对比</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模块间调用"><span class="nav-number">2.2.</span> <span class="nav-text">模块间调用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#仿真测试"><span class="nav-number">2.3.</span> <span class="nav-text">仿真测试</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#信号发生器"><span class="nav-number">2.3.1.</span> <span class="nav-text">信号发生器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#仿真开始"><span class="nav-number">2.3.2.</span> <span class="nav-text">仿真开始</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SystemC库的编译"><span class="nav-number">3.</span> <span class="nav-text">SystemC库的编译</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#在windows下编译systemC库"><span class="nav-number">3.1.</span> <span class="nav-text">在windows下编译systemC库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在linux下编译systemc库"><span class="nav-number">3.2.</span> <span class="nav-text">在linux下编译systemc库</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Visual-Studio-2019的SystemC环境配置"><span class="nav-number">4.</span> <span class="nav-text">Visual Studio 2019的SystemC环境配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Visual-Studio-Code的SystemC环境配置"><span class="nav-number">5.</span> <span class="nav-text">Visual Studio Code的SystemC环境配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#VCD波形文件的使用"><span class="nav-number">6.</span> <span class="nav-text">VCD波形文件的使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">7.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考内容"><span class="nav-number">8.</span> <span class="nav-text">参考内容</span></a></li></ol>
+    
+    </div>
+  </aside>
+
+</section>
+        
+      </div>
+      
+      <footer id="footer">
+  
+
+  <div class="container">
+      	<div class="row">
+	      <p> Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></p>
+	      <p id="copyRightEn">Copyright &copy; 2019 - 2020 Transparent Space All Rights Reserved.</p>
+	      
+	      
+    		<p class="busuanzi_uv">
+				UV : <span id="busuanzi_value_site_uv"></span> |  
+				PV : <span id="busuanzi_value_site_pv"></span>
+		    </p>
+  		   
+		</div>
+
+		
+  </div>
+</footer>
+
+
+<!-- min height -->
+
+<script>
+    var wrapdiv = document.getElementById("wrap");
+    var contentdiv = document.getElementById("content");
+    var allheader = document.getElementById("allheader");
+
+    wrapdiv.style.minHeight = document.body.offsetHeight + "px";
+    if (allheader != null) {
+      contentdiv.style.minHeight = document.body.offsetHeight - allheader.offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    } else {
+      contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    }
+</script>
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/categories" class="mobile-nav-link">Categories</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tags</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav> -->
+    
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/scripts.js"></script>
+
+
+
+
+
+  
+<script src="/js/dialog.js"></script>
+
+
+
+
+
+
+
+
+
+	<div style="display: none;">
+    <script src="https://s95.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+  </div>
+
+
+
+	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+	</script>
+
+
+
+
+
+
+  </div>
+
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="myModalLabel">设置</h2>
+      </div>
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+
+
+      <div class="modal-body">
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" onclick="javascript:setFontSize();" aria-expanded="true" aria-controls="collapseOne">
+              正文字号大小
+            </a>
+          </div>
+          <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+          <div class="panel-body">
+            您已调整页面字体大小
+          </div>
+        </div>
+      
+
+
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" onclick="javascript:setBackground();" aria-expanded="true" aria-controls="collapseTwo">
+              夜间护眼模式
+            </a>
+        </div>
+          <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+          <div class="panel-body">
+            夜间模式已经开启，再次单击按钮即可关闭 
+          </div>
+        </div>
+
+        <div>
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;关 于&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+         <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+          <div class="panel-body">
+            Transparent Space
+          </div>
+          <div class="panel-body">
+            Copyright © 2020 Mr.Rich All Rights Reserved.
+          </div>
+        </div>
+      </div>
+
+
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <div class="modal-footer">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+      </div>
+    </div>
+  </div>
+</div>
+  
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+  
+    <a id="menu-switch"><i class="fa fa-bars fa-lg"></i></a>
+  
+</body>
+</html>
