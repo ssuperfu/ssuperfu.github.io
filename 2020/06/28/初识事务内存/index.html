@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>初识事务内存 | Transparent Space</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <meta name="keywords" content="LearningNote" />
+  
+  
+  
+  
+  <meta name="description" content="背景我们在购买电脑、手机时常常会考虑其处理器性能，如苹果的A12Z处理器等，在2004年以前，人们通过不断地提高处理器的运行频率来获得性能的提升。频率的提升带来处理器、软件性能提升的同时，也带了功耗和散热的问题，所以在2004年处理器频率达到3.8GHz后就几乎陷入停滞，人们开始探索单芯片内部多处理器核心这个方向，多个核心之间使用共享存储进行互联。随着技术的发展，单个芯片上核心数量进一步增加，多核">
+<meta property="og:type" content="article">
+<meta property="og:title" content="初识事务内存">
+<meta property="og:url" content="http://yoursite.com/2020/06/28/%E5%88%9D%E8%AF%86%E4%BA%8B%E5%8A%A1%E5%86%85%E5%AD%98/index.html">
+<meta property="og:site_name" content="Transparent Space">
+<meta property="og:description" content="背景我们在购买电脑、手机时常常会考虑其处理器性能，如苹果的A12Z处理器等，在2004年以前，人们通过不断地提高处理器的运行频率来获得性能的提升。频率的提升带来处理器、软件性能提升的同时，也带了功耗和散热的问题，所以在2004年处理器频率达到3.8GHz后就几乎陷入停滞，人们开始探索单芯片内部多处理器核心这个方向，多个核心之间使用共享存储进行互联。随着技术的发展，单个芯片上核心数量进一步增加，多核">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/ssuperfu/typora-image@master/demo/202006/28/213858-154223.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/ssuperfu/typora-image@master/demo/202006/28/213951-215926.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/ssuperfu/typora-image@master/demo/202006/28/214033-464001.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/ssuperfu/typora-image@master/demo/202006/28/214130-56610.png">
+<meta property="article:published_time" content="2020-06-28T14:17:18.000Z">
+<meta property="article:modified_time" content="2020-06-28T14:18:42.103Z">
+<meta property="article:author" content="Mr.Rich">
+<meta property="article:tag" content="LearningNote">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/ssuperfu/typora-image@master/demo/202006/28/213858-154223.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Transparent Space" type="application/atom+xml">
+  
+
+  
+
+  <link rel="icon" href="/css/images/mylogo.jpg">
+  <link rel="apple-touch-icon" href="/css/images/mylogo.jpg">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt; src:url("/css/fonts/FuturaPTBold.otf") format("woff");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt-light; src:url("/css/fonts/FuturaPTBook.otf") format("woff");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt-italic; src:url("/css/fonts/FuturaPTBookOblique.otf") format("woff");font-weight:400;font-style:italic;}
+}
+
+  </style>
+  
+<link rel="stylesheet" href="/css/style.css">
+
+
+  
+<script src="/js/jquery-3.1.1.min.js"></script>
+
+  
+<script src="/js/bootstrap.js"></script>
+
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.css" >
+
+  
+    
+<link rel="stylesheet" href="/css/dialog.css">
+
+  
+
+  
+
+  
+    <link rel="stylesheet" href="/css/header-post.css" >
+  
+
+  
+  
+  
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+
+
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
+
+
+  
+  <div id="container">
+    <div id="wrap">
+      
+        <header>
+
+    <div id="allheader" class="navbar navbar-default navbar-static-top" role="navigation">
+        <div class="navbar-inner">
+          
+          <div class="container"> 
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+
+            
+              <a class="brand" style="
+                 margin-top: 0px;"  
+                href="#" data-toggle="modal" data-target="#myModal" >
+                  <img width="124px" height="124px" alt="Hike News" src="/css/images/mylogo.jpg">
+              </a>
+            
+            
+            <div class="navbar-collapse collapse">
+              <ul class="hnav navbar-nav">
+                
+                  <li> <a class="main-nav-link" href="/">Home</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/archives">Archives</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/categories">Categories</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/tags">Tags</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/about">About</a> </li>
+                
+                  <li><div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+</div></li>
+            </div>
+          </div>
+                
+      </div>
+    </div>
+
+</header>
+
+
+
+      
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;"><article id="post-初识事务内存" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      初识事务内存
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/06/28/%E5%88%9D%E8%AF%86%E4%BA%8B%E5%8A%A1%E5%86%85%E5%AD%98/" class="article-date">
+	  <time datetime="2020-06-28T14:17:18.000Z" itemprop="datePublished">2020-06-28</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Learning-Note/">Learning Note</a>
+
+      
+	<a class="article-views">
+	<span id="busuanzi_container_page_pv">
+		PV:<span id="busuanzi_value_page_pv"></span>
+	</span>
+	</a>
+
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>我们在购买电脑、手机时常常会考虑其处理器性能，如苹果的A12Z处理器等，在2004年以前，人们通过不断地提高处理器的运行频率来获得性能的提升。频率的提升带来处理器、软件性能提升的同时，也带了功耗和散热的问题，所以在2004年处理器频率达到3.8GHz后就几乎陷入停滞，人们开始探索单芯片内部多处理器核心这个方向，多个核心之间使用共享存储进行互联。随着技术的发展，单个芯片上核心数量进一步增加，多核微体系结构已经成为高性能微处理器发展的主流。</p>
+<p>多核处理器上的每个核心可以并行地处理多个线程，但多核处理器需要有适配的软件才可以发挥它的优势，传统的单核处理上运行的软件无法获得多核处理器带来的并行收益，因此，我们需要开发适配的并行程序才能够发挥多核处理器的优势。</p>
+<p>并行程序的设计开发调试并非易事，对编程人员的能力是一个较大的考验。如何简单高效地开发一款并行程序，充分利用多核处理器的并行能力，持续提升软件性能是人们一直在探索的一个问题。并行程序的开发难点在于如何维护和管理内存中的共享数据，目前最常用的工具就是“锁”。通过对共享数据加锁解锁来保证并行程序的执行功能正确性。</p>
+<h2 id="关于“锁”"><a href="#关于“锁”" class="headerlink" title="关于“锁”"></a>关于“锁”</h2><p>“锁”是一种简单实现程序并行的方式，在基于锁的方法中，程序员只需识别到共享数据，并指定如何同步对数据的并发访问，“锁”的实现原理在这里不做详细介绍，这里主要来谈一谈“锁”存在的一些问题。</p>
+<h3 id="Amdahl’s-Law"><a href="#Amdahl’s-Law" class="headerlink" title="Amdahl’s Law"></a>Amdahl’s Law</h3><p>一般来讲，一个并行程序会由串行部分和并行部分组成，假设串行部分的执行时间为A，并行执行部分的执行时间为B，有N个线程可以并行执行可并行的部分，这个部分的执行时间为B/N，那么并行程序总体执行时为：T = A + B/N。</p>
+<p>对于一段串行执行需要16秒的代码来说，如果用16个核并行完成仅需1秒；而如果这段代码只有50%可以并行执行，那么整体的时间完成时间就上升为8.5秒，这大大降低了多核处理器本应发挥的性能，而限制这个性能的直接原因是因为程序串行的执行，而前文提到的“锁”是引起程序串行执行的主要原因之一。</p>
+<h3 id="其他问题"><a href="#其他问题" class="headerlink" title="其他问题"></a>其他问题</h3><p>“锁”机制在程序编写时还有以下几个问题：</p>
+<ol>
+<li>加锁和解锁的顺序会导致“死锁”的产生</li>
+<li>粗粒度的锁编程会影响程序的并行度，而细粒度的锁编程复杂、难以维护</li>
+<li>容易导致优先级倒置现象，即低优先级的线程持有锁，高优先级线程等待</li>
+<li>多个基于锁编程的程序组合成一个新程序比较困难</li>
+</ol>
+<p>现在有很多针对“锁”机制存在问题的解决办法以及提高并行编程效率的同步模型，其中<strong>事务内存</strong>(Transactional Memory, TM)是比较具有吸引力和应用前景的一种技术，本文接下来将重点介绍这项技术的基本内容。</p>
+<h1 id="事务内存概况"><a href="#事务内存概况" class="headerlink" title="事务内存概况"></a>事务内存概况</h1><p>如前文所述，事务内存的出现是为了处理多核处理器上的并行编程效率与程序性能之间的矛盾。在共享内存环境下，事务内存通过将不同并行执行的线程事务化，既提高了多线程并行程序并发执行的性能，又保证了程序员编程的效率。</p>
+<p>事务内存的概念源于数据库系统，数据库内部采用了事务的概念，对外呈现的是一个十分简洁、高效的接口，极大地简化了程序员的操作。下面这一段代码中<code>atomic</code>后的代码段就可以是一个事务。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">struct Foo&#123;</span><br><span class="line">    int x;</span><br><span class="line">    int y;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Foo foo, bar;</span><br><span class="line">int t;</span><br><span class="line">atomic&#123;</span><br><span class="line">    t &#x3D; foo.x;</span><br><span class="line">    bar.x &#x3D; t;</span><br><span class="line">    t &#x3D; foo.y;</span><br><span class="line">    bar.y &#x3D; t;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="事务内存属性"><a href="#事务内存属性" class="headerlink" title="事务内存属性"></a>事务内存属性</h2><p>事务内存具有三种属性，原子性、一致性、隔离性。原子性表明事务作为一个整体是不可分的，即其内部的操作要么全部都被系统接受，要么全部都不被系统接受。一致性表明任何一个对共享数据进行访问操作的事务在其执行前后系统的状态都应该是一致的。隔离型则表明事务在正常提交之前，其内部的操作对外是不可见的，即未提交的事务操作不会影响系统的状态。</p>
+<p>这三种属性也是借鉴了传统数据库中的原子性、一致性、隔离性和持久性的概念，在事务内存中，由于是对共享数据的操作进行操作，所以无需强调持久性这一性质。</p>
+<h2 id="事务内存的构成"><a href="#事务内存的构成" class="headerlink" title="事务内存的构成"></a>事务内存的构成</h2><p>事务内存系统从实现的功能上看，主要完成三个任务：共享数据的版本管理、冲突检测和竞争管理。版本管理指系统如何管理事务执行过程中共享数据需要写入的新值和更新前的旧值，以及在事务成功提交或作废时如何将新写入的值提交到内存或回复事务执行前地旧值；冲突检测是系统如何检测事务在执行中遇到的数据冲突；竞争管理是在两个事务发生冲突之后，系统选择对需要中止的事务做出判断，并决定何时重启事务。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/ssuperfu/typora-image@master/demo/202006/28/213858-154223.png" alt="image-20200628213850381"></p>
+<h3 id="事务冲突"><a href="#事务冲突" class="headerlink" title="事务冲突"></a>事务冲突</h3><p>对于两个并行的事务来说，在一个事务执行的过程中，如果另一个事务需要使用第一个事物中的共享数据，那么这两者就会产生冲突，继续以上一段代码为例。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">int t1, t2;</span><br><span class="line">atomic&#123;</span><br><span class="line">    t &#x3D; foo.x;</span><br><span class="line">    bar.x &#x3D; t;</span><br><span class="line">    t &#x3D; foo.y;</span><br><span class="line">    bar.y &#x3D; t;</span><br><span class="line">&#125;</span><br><span class="line">atomic&#123;</span><br><span class="line">    t1 &#x3D; bar.x;</span><br><span class="line">    t2 &#x3D; bar.y;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在这一段代码中，两个事务同时要对<code>bar</code>结构体中的<code>x</code>和<code>y</code>进行读写操作，进而产生了冲突，为了避免功能错误，这时就需要通过竞争管理来决定哪一个事务需要回滚重启。</p>
+<h2 id="事务内存实现的基本模型"><a href="#事务内存实现的基本模型" class="headerlink" title="事务内存实现的基本模型"></a>事务内存实现的基本模型</h2><p>下面这段伪代码展示了事务内存实现的基本流程。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; Create threads that use transaction</span><br><span class="line">&#x2F;&#x2F; Declare transactional data</span><br><span class="line"></span><br><span class="line">Begin_Transaction();</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; Read and Write</span><br><span class="line">&#x2F;&#x2F; transactional data</span><br><span class="line"></span><br><span class="line">if something happens</span><br><span class="line">    Abort_Transaction();</span><br><span class="line"></span><br><span class="line">End_Transaction();</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; Commit or Abort</span><br></pre></td></tr></table></figure>
+<p>在事务开始之前，声明事务中使用到的数据。在事务开始执行后（执行<code>Begin_Transaction()</code>函数），所有的事务性数据都会被读取以及更新，此后在该事务结束（执行<code>End_Transaction()</code>函数）前，这些数据的更改都是对外不透明的（即在该事务执行过程中，其他线程使用的该事务中用到的事务性数据的值是该事务执行前的值）。在该事务结束时，检查该事务中使用到的数据的一致性情况。</p>
+<p>如果一致性检查通过（在执行该事务过程中，其用到的数据没有被其他事务读取或修改），那么该事务中对数据的更改会同步到内存中；如果数据中发生不一致或冲突时，中止函数将删除对数据的更新，并在事务中止或挂起时返回事务的起始点(发生回滚)。</p>
+<p>大多数情况下，正在进行的事务的加载(读)操作无法使用来自前一个事务的存储(写)操作的结果。当冲突的访问没有同步时，就会发生数据竞争。数据竞争会导致数据一致性丢失，事务性内存将取消更新。因此，原子操作可以由事务实现。</p>
+<p>事务性内存机制为多线程处理提供了非常有用的编程抽象。访问线程之间共享的数据的关键区域被封闭在了事务性内存中。</p>
+<h2 id="其他优势"><a href="#其他优势" class="headerlink" title="其他优势"></a>其他优势</h2><p>总的来说，事务内存系统具有以下几个优点：</p>
+<ol>
+<li>并行编程的复杂度降低，从下面这段代码中可以看出，可以用atomic关键字直接包装共享数据的访问序列，达到互斥的效果<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">insertDListEntry(ptr, new)&#123;</span><br><span class="line">    atomic&#123;</span><br><span class="line">        temp &#x3D; ptr -&gt; next;</span><br><span class="line">        ptr -&gt; next &#x3D; new;</span><br><span class="line">        new -&gt;next &#x3D; temp;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>基于事务内存同步模型的并行程序具有很好的可构建性。即小的功能单一的事务可以通过简单的合并形成更复杂功能的大事务。例如，在前面为共享链表插入节点的例子中，如果程序员需要实现链表中一个节点的替换操作(插入一个新节点再删除一个老节点)，为保证逻辑正确性,要求插入和删除节点的操作之间不能有其他线程对链表的访问。在锁同步模型下，程序员通常需要重新编写代码来实现这两个操作序列的原子性，而在事务内存同步模型下，以前编写的代码可以重用，只需要将分别实现节点插入和删除操作的事务包含在一个父事务中即可(事务嵌套)。</li>
+<li>事务内存同步模型还具有性能上的优势。它允许读-读并行访问，即在没有写操作的情况下允许多个线程并行地访问共享资源。而在锁同步模型下，共享读操作也需要独占其访问锁。因为，锁同步模型采用的是“悲观”的并行执行方式，即在访问临界区前先假定会存在访问冲突，因而需要提前执行加锁操作。而在实际执行过程中，大多数程序中线程间访问共享数据产生冲突的概率很小，另外，加锁和解锁的操作本身就带来了很大的开销。而事务内存同步模型则采取“乐观”的并行执行方式，即执行前假定不会产生冲突，各线程执行时直接访问共享资源，万一在执行过程中发生冲突时再以较小的开销来进行一些“补救”的措施，从总体上提高了系统的并行执行性能。</li>
+</ol>
+<h1 id="事务内存系统的实现方式"><a href="#事务内存系统的实现方式" class="headerlink" title="事务内存系统的实现方式"></a>事务内存系统的实现方式</h1><h2 id="软件事务内存（Software-Transactional-Memory-STM）"><a href="#软件事务内存（Software-Transactional-Memory-STM）" class="headerlink" title="软件事务内存（Software Transactional Memory, STM）"></a>软件事务内存（Software Transactional Memory, STM）</h2><p>软件事务内存系统完全由软件来实现，不需要特殊的硬件支持，这样底层系统不存在资源限制，并且可以处理大多数复杂的同步问题，从而减少事务中止，在某些有大型事务的应用程序中获得更好的整体性能。此外，用软件实现冲突检测、数据版本管理以及竞争管理可以有较高的灵活性，但是对于同一事务来说，用软件事务内存系统执行相比硬件事务内存系统性能较差。</p>
+<p>一般有以下几种途径来实现：</p>
+<ol>
+<li>库函数实现。线程在访问共享对象时，通过调用对应的库函数来进行事务操作，如冲突检测、竞争管理等。</li>
+<li>虚拟机实现。有虚拟机系统来提供相关接口供用户程序调用。</li>
+<li>程序语言实现。Java语言、Haskell语言的扩展等都提供了对事务内存的支持。</li>
+</ol>
+<p>软件事务内存的实现相对来说比较简单，现在也有一些开源的软件事务内存工程，通过研究这些源码可以对事务内存的整体实现机理有一个大致的了解，同时也适合做一些学术研究。</p>
+<h2 id="硬件事务内存（Hardware-Transactional-Memory-HTM）"><a href="#硬件事务内存（Hardware-Transactional-Memory-HTM）" class="headerlink" title="硬件事务内存（Hardware Transactional Memory, HTM）"></a>硬件事务内存（Hardware Transactional Memory, HTM）</h2><p>硬件事务内存系统一般是在每个处理器核心中增加事务cache，同时在CPU指令集中增加事务相关的指令。在执行事务的过程中，事务访问过的数据会缓存在事务cache中，修改过的cache一致性协议会检测各事务之间的冲突。如果产生冲突，对应的事务cache中修改过的数据全部作废，该事务重新执行；如果没有冲突产生，就在事务结束时把事务cache中的数据更新到内存中。</p>
+<p>硬件事务内存系统完全由硬件电路实现，所以其性能相较于软件事务内存系统有很大的优势，但是由于硬件资源的限制，所以硬件事务内存无法处理大型事务（在处理大事务的过程中会产生大量的共享数据修改操作，这些修改记录的大小超过处理器内事务cache的大小）。为了保证事务的完全执行，现有的商用硬件事务内存系统会加入串行部分，也就是“锁”，对于一部分硬件事务内存实在无法完成的事务就用串行部分完成，这虽然损失了部分性能，但至少保证了功能的完整性。</p>
+<p>在具体实现时有2个要点：</p>
+<ol>
+<li>使用处理器内部的事务cache来存放事务执行过程中更新的数据，这一类的经典代表：TCC</li>
+<li>使用cache一致性协议来检测事物之间共享数据访问的冲突，这一类的经典代表：LogTM</li>
+</ol>
+<h3 id="经典硬件事务内存系统"><a href="#经典硬件事务内存系统" class="headerlink" title="经典硬件事务内存系统"></a>经典硬件事务内存系统</h3><p>为了方便对硬件事务内存执行机制的理解，我们以经典的TCC系统为例，理解硬件事务内存执行的过程，不同的硬件事务内存系统在细节上略有不同，但是整体结构都是类似的，下图是TCC系统的体系结构图。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/ssuperfu/typora-image@master/demo/202006/28/213951-215926.png" alt="image-20200628213950610"></p>
+<p>TCC系统是在2004年ISCA会议上被提出的，其主要为了解决事务cache大小不足的问题。图中每一个node代表的是一个处理器核心，每一个核心都有一个Update Buffer，每一个node可以并行执行事务，在执行过程中对内存数据的修改都会缓存在自己的Updae Buffer中，在事务提交时，处理器核心会获得一个全局唯一令牌，这是保证同时只允许有一个事务提交。在获得令牌的处理器提交事务修改数据的同时，它会通过总线向其他处理器广播其修改的数据内容，其他处理器在监听到广播内容后，比照自己的Update Buffer中的修改数据是否和广播内容冲突，如果发生冲突，则该处理器中正在执行的事务重新执行。也就是说，获得提交令牌的处理器具有最高的权限，其处理完成的事务一定可以保证提交成功。</p>
+<p>如果在事务执行过程中发生Update Buffer溢出时，该处理器会请求获取提交令牌，同时持续持有这个令牌直到自己的事务结束，在此过程中，其他处理器不允许提交事务，同时该处理器新产生的数据直接更新至内存。</p>
+<h2 id="软硬混合事务内存"><a href="#软硬混合事务内存" class="headerlink" title="软硬混合事务内存"></a>软硬混合事务内存</h2><p>2013年Intel发布了首款支持硬件事务内存的x86处理器，如前文提到的一样，虽然对事务内存提供支持，但是不保证所有事务都可以成功执行，也就是说当硬件事务内存无法执行时需要有一个应急方案来完成事务，最简单的就是用“锁”来完成，稍复杂的就是用软件事务内存来完成，同时软件事务内存还可以处理因为事务cache溢出的情况。这种使用多种事务内存的情况称之为：混合事务内存（Hybrid Transactional Memory, HyTM）。</p>
+<p>混合事务内存的基本结构如下图所示。由于硬件事务内存的高性能，首先会让其执行到来的事务，当其无法完成事务时，调度器会根据事务的特征将其分配给软件事务内存或者串行“锁”去完成。从设计思路上看，硬件主要负责较小的事务，而软件主要负责较大的事务，串行“锁”处理发生冲突过多的事务。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/ssuperfu/typora-image@master/demo/202006/28/214033-464001.png" alt="image-20200628214032738"></p>
+<p>混合事务内存兼顾了事务的完成度以及完成性能，但是所有的混合事务内存往往都需要协调硬件和软件事务的并发执行以及两个系统之间的通信问题，这会明显提高事务内存调度算法的复杂度。</p>
+<h3 id="分阶段事务内存系统（Phase-Transactional-Memory-PhTM）"><a href="#分阶段事务内存系统（Phase-Transactional-Memory-PhTM）" class="headerlink" title="分阶段事务内存系统（Phase Transactional Memory, PhTM）"></a>分阶段事务内存系统（Phase Transactional Memory, PhTM）</h3><p>为了解决混合事务内存执行开销过大的问题，有人提出了分阶段事务内存系统的概念。阶段事务内存是一种基于阶段的事务系统，它根据事务长度、争用级别等属性选择模式来执行事务。与混合事务内存系统不同的是，其在同一时段只有一种模式运行（HTM或STM），模式之间的跳转由调度算法给出，其结构的示意图由下图给出。<br><img src="https://cdn.jsdelivr.net/gh/ssuperfu/typora-image@master/demo/202006/28/214130-56610.png" alt="image-20200628214128106"><br>分阶段事务内存系统有效避免了多系统并行调度的复杂度，在一个出色的调度算法的支撑下，其可以达到混合事务内存系统的性能，但大大减小了执行开销。</p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>本文主要对事务内存系统做了一个概括性的介绍，事务内存作为一项简化并行编程的技术，在提升多核处理器应用程序性能的开发上有一个比较宽阔的前景。由于其实现方式的多样性以及每一种实现方式都存在各自的利弊，所以到目前为止仍未出现一款被大部分人认可的“完美”结构。凭借着近些年机器学习的兴起，出现了一批使用机器学习算法来做任务调度的事务内存系统，其在保证系统性能的情况进一步降低了开销，使事务内存系统向“完美”结构又迈进了一步。</p>
+<h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><ol>
+<li>王睿伯. 面向NUMA结构的软件事务内存关键技术研究[D].国防科学技术大学,2011.</li>
+<li>S. Young-Sung, J. Jin-Su, J. Yeon-Woo and C. Jae-Woo, “C2-HyTM : An Adaptive Hybrid Transactional Memory Scheme as Efficient Synchronization Mechanism for Multicore Parallel Processing,” 2018 IEEE International Conference on Cluster Computing (CLUSTER), Belfast, 2018, pp. 152-153, doi: 10.1109/CLUSTER.2018.00028.</li>
+<li>J. P. L. de Carvalho, G. Araujo and A. Baldassin, “The Case for Phase-Based Transactional Memory,” in IEEE Transactions on Parallel and Distributed Systems, vol. 30, no. 2, pp. 459-472, 1 Feb. 2019, doi: 10.1109/TPDS.2018.2861712.</li>
+<li>M. Qayum, A. A. Badawy and J. Cook, “DAdHTM: Low overhead dynamically adaptive hardware transactional memory for large graphs a scalability study,” 2017 IEEE SmartWorld, Ubiquitous Intelligence &amp; Computing, Advanced &amp; Trusted Computed, Scalable Computing &amp; Communications, Cloud &amp; Big Data Computing, Internet of People and Smart City Innovation (SmartWorld/SCALCOM/UIC/ATC/CBDCom/IOP/SCI), San Francisco, CA, 2017, pp. 1-8, doi: 10.1109/UIC-ATC.2017.8397653.</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+        
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/LearningNote/" rel="tag">LearningNote</a></li></ul>
+
+      
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2020/06/25/%E7%AB%AF%E5%8D%88%E7%9F%AD%E8%81%9A/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">端午短聚</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- Table of Contents -->
+
+  <aside id="toc-sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">Contents</strong>
+    
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#背景"><span class="nav-number">1.</span> <span class="nav-text">背景</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#关于“锁”"><span class="nav-number">1.1.</span> <span class="nav-text">关于“锁”</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Amdahl’s-Law"><span class="nav-number">1.1.1.</span> <span class="nav-text">Amdahl’s Law</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他问题"><span class="nav-number">1.1.2.</span> <span class="nav-text">其他问题</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#事务内存概况"><span class="nav-number">2.</span> <span class="nav-text">事务内存概况</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#事务内存属性"><span class="nav-number">2.1.</span> <span class="nav-text">事务内存属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#事务内存的构成"><span class="nav-number">2.2.</span> <span class="nav-text">事务内存的构成</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#事务冲突"><span class="nav-number">2.2.1.</span> <span class="nav-text">事务冲突</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#事务内存实现的基本模型"><span class="nav-number">2.3.</span> <span class="nav-text">事务内存实现的基本模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他优势"><span class="nav-number">2.4.</span> <span class="nav-text">其他优势</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#事务内存系统的实现方式"><span class="nav-number">3.</span> <span class="nav-text">事务内存系统的实现方式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#软件事务内存（Software-Transactional-Memory-STM）"><span class="nav-number">3.1.</span> <span class="nav-text">软件事务内存（Software Transactional Memory, STM）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#硬件事务内存（Hardware-Transactional-Memory-HTM）"><span class="nav-number">3.2.</span> <span class="nav-text">硬件事务内存（Hardware Transactional Memory, HTM）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#经典硬件事务内存系统"><span class="nav-number">3.2.1.</span> <span class="nav-text">经典硬件事务内存系统</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#软硬混合事务内存"><span class="nav-number">3.3.</span> <span class="nav-text">软硬混合事务内存</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#分阶段事务内存系统（Phase-Transactional-Memory-PhTM）"><span class="nav-number">3.3.1.</span> <span class="nav-text">分阶段事务内存系统（Phase Transactional Memory, PhTM）</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考文献"><span class="nav-number">5.</span> <span class="nav-text">参考文献</span></a></li></ol>
+    
+    </div>
+  </aside>
+
+</section>
+        
+      </div>
+      
+      <footer id="footer">
+  
+
+  <div class="container">
+      	<div class="row">
+	      <p> Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></p>
+	      <p id="copyRightEn">Copyright &copy; 2019 - 2020 Transparent Space All Rights Reserved.</p>
+	      
+	      
+    		<p class="busuanzi_uv">
+				UV : <span id="busuanzi_value_site_uv"></span> |  
+				PV : <span id="busuanzi_value_site_pv"></span>
+		    </p>
+  		   
+		</div>
+
+		
+  </div>
+</footer>
+
+
+<!-- min height -->
+
+<script>
+    var wrapdiv = document.getElementById("wrap");
+    var contentdiv = document.getElementById("content");
+    var allheader = document.getElementById("allheader");
+
+    wrapdiv.style.minHeight = document.body.offsetHeight + "px";
+    if (allheader != null) {
+      contentdiv.style.minHeight = document.body.offsetHeight - allheader.offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    } else {
+      contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    }
+</script>
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/categories" class="mobile-nav-link">Categories</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tags</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav> -->
+    
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/scripts.js"></script>
+
+
+
+
+
+  
+<script src="/js/dialog.js"></script>
+
+
+
+
+
+
+
+
+
+	<div style="display: none;">
+    <script src="https://s95.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+  </div>
+
+
+
+	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+	</script>
+
+
+
+
+
+
+  </div>
+
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="myModalLabel">设置</h2>
+      </div>
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+
+
+      <div class="modal-body">
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" onclick="javascript:setFontSize();" aria-expanded="true" aria-controls="collapseOne">
+              正文字号大小
+            </a>
+          </div>
+          <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+          <div class="panel-body">
+            您已调整页面字体大小
+          </div>
+        </div>
+      
+
+
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" onclick="javascript:setBackground();" aria-expanded="true" aria-controls="collapseTwo">
+              夜间护眼模式
+            </a>
+        </div>
+          <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+          <div class="panel-body">
+            夜间模式已经开启，再次单击按钮即可关闭 
+          </div>
+        </div>
+
+        <div>
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;关 于&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+         <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+          <div class="panel-body">
+            Transparent Space
+          </div>
+          <div class="panel-body">
+            Copyright © 2020 Mr.Rich All Rights Reserved.
+          </div>
+        </div>
+      </div>
+
+
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <div class="modal-footer">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+      </div>
+    </div>
+  </div>
+</div>
+  
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+  
+    <a id="menu-switch"><i class="fa fa-bars fa-lg"></i></a>
+  
+</body>
+</html>
