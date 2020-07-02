@@ -23,7 +23,7 @@
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/ssuperfu/typora-image@master/demo/202006/28/214033-464001.png">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/ssuperfu/typora-image@master/demo/202006/28/214130-56610.png">
 <meta property="article:published_time" content="2020-06-28T14:17:18.000Z">
-<meta property="article:modified_time" content="2020-06-28T14:18:42.103Z">
+<meta property="article:modified_time" content="2020-07-02T14:27:59.855Z">
 <meta property="article:author" content="Mr.Rich">
 <meta property="article:tag" content="LearningNote">
 <meta name="twitter:card" content="summary">
@@ -234,7 +234,7 @@
 <p>这三种属性也是借鉴了传统数据库中的原子性、一致性、隔离性和持久性的概念，在事务内存中，由于是对共享数据的操作进行操作，所以无需强调持久性这一性质。</p>
 <h2 id="事务内存的构成"><a href="#事务内存的构成" class="headerlink" title="事务内存的构成"></a>事务内存的构成</h2><p>事务内存系统从实现的功能上看，主要完成三个任务：共享数据的版本管理、冲突检测和竞争管理。版本管理指系统如何管理事务执行过程中共享数据需要写入的新值和更新前的旧值，以及在事务成功提交或作废时如何将新写入的值提交到内存或回复事务执行前地旧值；冲突检测是系统如何检测事务在执行中遇到的数据冲突；竞争管理是在两个事务发生冲突之后，系统选择对需要中止的事务做出判断，并决定何时重启事务。</p>
 <p><img src="https://cdn.jsdelivr.net/gh/ssuperfu/typora-image@master/demo/202006/28/213858-154223.png" alt="image-20200628213850381"></p>
-<h3 id="事务冲突"><a href="#事务冲突" class="headerlink" title="事务冲突"></a>事务冲突</h3><p>对于两个并行的事务来说，在一个事务执行的过程中，如果另一个事务需要使用第一个事物中的共享数据，那么这两者就会产生冲突，继续以上一段代码为例。</p>
+<h3 id="事务冲突"><a href="#事务冲突" class="headerlink" title="事务冲突"></a>事务冲突</h3><p>对于两个并行的事务来说，在一个事务执行的过程中，如果另一个事务需要使用第一个事务中的共享数据，那么这两者就会产生冲突，继续以上一段代码为例。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">int t1, t2;</span><br><span class="line">atomic&#123;</span><br><span class="line">    t &#x3D; foo.x;</span><br><span class="line">    bar.x &#x3D; t;</span><br><span class="line">    t &#x3D; foo.y;</span><br><span class="line">    bar.y &#x3D; t;</span><br><span class="line">&#125;</span><br><span class="line">atomic&#123;</span><br><span class="line">    t1 &#x3D; bar.x;</span><br><span class="line">    t2 &#x3D; bar.y;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>在这一段代码中，两个事务同时要对<code>bar</code>结构体中的<code>x</code>和<code>y</code>进行读写操作，进而产生了冲突，为了避免功能错误，这时就需要通过竞争管理来决定哪一个事务需要回滚重启。</p>
 <h2 id="事务内存实现的基本模型"><a href="#事务内存实现的基本模型" class="headerlink" title="事务内存实现的基本模型"></a>事务内存实现的基本模型</h2><p>下面这段伪代码展示了事务内存实现的基本流程。</p>
@@ -262,7 +262,7 @@
 <p>在具体实现时有2个要点：</p>
 <ol>
 <li>使用处理器内部的事务cache来存放事务执行过程中更新的数据，这一类的经典代表：TCC</li>
-<li>使用cache一致性协议来检测事物之间共享数据访问的冲突，这一类的经典代表：LogTM</li>
+<li>使用cache一致性协议来检测事务之间共享数据访问的冲突，这一类的经典代表：LogTM</li>
 </ol>
 <h3 id="经典硬件事务内存系统"><a href="#经典硬件事务内存系统" class="headerlink" title="经典硬件事务内存系统"></a>经典硬件事务内存系统</h3><p>为了方便对硬件事务内存执行机制的理解，我们以经典的TCC系统为例，理解硬件事务内存执行的过程，不同的硬件事务内存系统在细节上略有不同，但是整体结构都是类似的，下图是TCC系统的体系结构图。</p>
 <p><img src="https://cdn.jsdelivr.net/gh/ssuperfu/typora-image@master/demo/202006/28/213951-215926.png" alt="image-20200628213950610"></p>
@@ -330,7 +330,7 @@
 
   <div class="container">
       	<div class="row">
-	      <p> Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></p>
+
 	      <p id="copyRightEn">Copyright &copy; 2019 - 2020 Transparent Space All Rights Reserved.</p>
 	      
 	      
