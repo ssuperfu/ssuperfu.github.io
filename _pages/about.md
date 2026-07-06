@@ -19,7 +19,7 @@ redirect_from:
 
 ## About Me
 
-I am **Chao Fu**, an Associate Researcher at **Shaoxin Laboratory, Fudan University**.
+I am **Chao Fu**, an Associate Researcher at **Shaoxin Laboratory, Fudan University**. I received my Ph.D. from **Fudan University**, where I was advised by [**Prof. Jun Han**](https://icmne.fudan.edu.cn/2c/af/c48925a732335/page.htm).
 
 My research focuses on **computer architecture and system-level design for embodied AI deployment**.
 To this end, my research span:
