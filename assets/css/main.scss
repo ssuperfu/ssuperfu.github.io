@@ -212,3 +212,121 @@ h1:before, .anchor:before {
     line-height: 1.2;
     box-shadow: 0 3px 8px rgba(38, 50, 56, .18);
 }
+
+.demo-card-link {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: none;
+
+        .demo-card {
+            border-color: mix(#fff, $link-color, 45%);
+            box-shadow: 0 10px 24px rgba(38, 50, 56, .10);
+            transform: translateY(-2px);
+        }
+
+        .demo-card-readmore {
+            color: $link-color-hover;
+        }
+    }
+}
+
+.demo-card {
+    transition: border-color .15s ease, box-shadow .15s ease, transform .15s ease;
+
+    .paper-box-text {
+        h2 {
+            margin-top: 0;
+            margin-bottom: .45rem;
+            padding-bottom: 0;
+            border-bottom: 0;
+            font-size: 1.15rem;
+            line-height: 1.35;
+            letter-spacing: 0;
+
+            &:before {
+                display: none;
+            }
+        }
+
+        p {
+            color: mix(#fff, $text-color, 20%);
+        }
+    }
+}
+
+.demo-card-readmore {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: $link-color;
+    font-weight: 700;
+}
+
+.demo-post {
+    max-width: 46rem;
+
+    .demo-post__cover {
+        margin: 0 0 1.5rem;
+
+        img {
+            display: block;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            border-radius: 8px;
+            object-fit: cover;
+            box-shadow: 0 8px 24px rgba(38, 50, 56, .08);
+        }
+    }
+
+    .demo-post__meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: .45rem 1rem;
+        margin: -.75rem 0 1.25rem;
+        color: mix(#fff, $text-color, 32%);
+        font-size: .9rem;
+    }
+
+    .demo-post__tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: .45rem;
+        margin: 0 0 1.5rem;
+
+        span {
+            padding: .18rem .55rem;
+            border-radius: 999px;
+            color: $link-color;
+            background: mix(#fff, $link-color, 92%);
+            font-size: .82rem;
+            font-weight: 700;
+        }
+    }
+
+    .demo-post__toc {
+        margin: 1.25rem 0 1.75rem;
+        padding: 1rem 1.1rem;
+        border: 1px solid #e5eaf0;
+        border-radius: 8px;
+        background: #fff;
+
+        strong {
+            display: block;
+            margin-bottom: .35rem;
+        }
+
+        ul {
+            margin: 0;
+            padding-left: 1.2rem;
+        }
+    }
+
+    .demo-post__back {
+        margin-top: 2rem;
+        padding-top: 1rem;
+        border-top: 1px solid $border-color;
+    }
+}
