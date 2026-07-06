@@ -17,14 +17,22 @@ redirect_from:
 
 <span class='anchor' id='about-me'></span>
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. Suspendisse condimentum, libero vel tempus mattis, risus risus vulputate libero, elementum fermentum mi neque vel nisl. Maecenas facilisis maximus dignissim. Curabitur mattis vulputate dui, tincidunt varius libero luctus eu. Mauris mauris nulla, scelerisque eget massa id, tincidunt congue felis. Sed convallis tempor ipsum rhoncus viverra. Pellentesque nulla orci, accumsan volutpat fringilla vitae, maximus sit amet tortor. Aliquam ultricies odio ut volutpat scelerisque. Donec nisl nisl, porttitor vitae pharetra quis, fringilla sed mi. Fusce pretium dolor ut aliquam consequat. Cras volutpat, tellus accumsan mattis molestie, nisl lacus tempus massa, nec malesuada tortor leo vel quam. Aliquam vel ex consectetur, vehicula leo nec, efficitur eros. Donec convallis non urna quis feugiat.
+## About Me
 
-My research interest includes neural machine translation and computer vision.
+I am **Chao Fu**, an Associate Researcher at **Shaoxin Laboratory, Fudan University**.
+My research focuses on **computer architecture and system-level design for embodied AI deployment**.
+To this end, my research span:
+  - Chiplet-based heterogeneous Electronic System Level design methodologies;
+  - memory systems and cache coherence for heterogeneous SoCs;
+  - domain-specific architectures for embodied AI workloads.
+
+My research broadly explores how advanced computer architectures can support **scalable, efficient, and deployable intelligent systems**.
+
 <!-- (You can also use google scholar badge <a href='https://scholar.google.com/citations?user=idFeW10AAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a>). -->
 
 ## Selected Publications
 <p class="section-intro">
-  <strong>Someone<sup>†</sup></strong> denotes equal contributions; <strong><u>Someone</u></strong> denotes corresponding authors.
+  <strong>Someone</strong> denotes first authors; <strong>Someone<sup>†</sup></strong> denotes equal contributions; <strong><u>Someone</u></strong> denotes corresponding authors.
 </p>
 
 
@@ -33,7 +41,7 @@ My research interest includes neural machine translation and computer vision.
 
 [TDMSim: Enabling High-Density and Energy-Efficient GPU DRAM Caches with 2D-Materials for Data-Intensive Applications](https://conferences.computer.org/iscapub26/pdfs/5065-3nexm57sBmVa6MJtFTiSrb/506501b255/506501b255.pdf)
 
-**Chao Fu<sup>†</sup>****, Jingyang Zheng<sup>†</sup>**, Xinliu He, Xiangqi Dong, Zheng Cao, Yuning Zhan, Wenzhong Bao, Peng Zhou, Jun Han
+**Chao Fu<sup>†</sup>**, Jingyang Zheng<sup>†</sup>, Xinliu He, Xiangqi Dong, Zheng Cao, Yuning Zhan, Wenzhong Bao, Peng Zhou, Jun Han
 
 <!-- [**Project**](https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=DhtAFkwAAAAJ&citation_for_view=DhtAFkwAAAAJ:ALROH1vI_8AC) <strong><span class='show_paper_citations' data='DhtAFkwAAAAJ:ALROH1vI_8AC'></span></strong> -->
 - This work bridges 2D-material devices and GPU architecture, achieving substantial performance and energy gains through retention-aware cache design.
