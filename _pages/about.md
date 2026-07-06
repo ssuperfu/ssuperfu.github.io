@@ -52,7 +52,7 @@ My research interest includes neural machine translation and computer vision.
 </div>
 </div>
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">TPDS</div><img src='{{ "/images/500x300.png" | relative_url }}' alt="Losatm publication preview" width="100%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">TPDS 2022</div><img src='{{ "/images/500x300.png" | relative_url }}' alt="Losatm publication preview" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 [Losatm: A hardware transactional memory integrated with a low-overhead scenario-awareness conflict manager](https://ieeexplore.ieee.org/abstract/document/9893383)
@@ -64,7 +64,7 @@ My research interest includes neural machine translation and computer vision.
 </div>
 </div>
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">TAD</div><img src='{{ "/images/500x300.png" | relative_url }}' alt="Homonoia publication preview" width="100%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">TAD 2025</div><img src='{{ "/images/500x300.png" | relative_url }}' alt="Homonoia publication preview" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 [Homonoia: Reinventing underutilized cross-level cache resource using reinforcement learning](https://ieeexplore.ieee.org/abstract/document/11363629)
@@ -76,7 +76,7 @@ My research interest includes neural machine translation and computer vision.
 </div>
 </div>
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">TAD</div><img src='{{ "/images/500x300.png" | relative_url }}' alt="PCMT publication preview" width="100%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">TAD 2025</div><img src='{{ "/images/500x300.png" | relative_url }}' alt="PCMT publication preview" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 [PCMT: Prioritizing Coherence Message Types for NoC Protocol-level Deadlock Freedom](https://ieeexplore.ieee.org/abstract/document/11142878)
@@ -88,7 +88,7 @@ Yufan Jia, Zhiyuan Zhang, **<u>Chao Fu</u>**, Li Wan, Jun Han
 </div>
 </div>
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">TACO</div><img src='{{ "/images/500x300.png" | relative_url }}' alt="Thoth publication preview" width="100%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">TACO 2026</div><img src='{{ "/images/taco_2026.png" | relative_url }}' alt="Thoth publication preview" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 [Thoth: Uncovering Data-Dependent Memory Access Patterns via Annotation-Directed Load Sampling](https://dl.acm.org/doi/pdf/10.1145/3806835)
