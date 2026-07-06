@@ -23,3 +23,4 @@
 - **[MEJ'21]** **Chao Fu**, Y Zhou, J Han. ["A hardware-efficient dual-source data replication and local broadcast mechanism in distributed shared caches"](https://scholar.google.com/citations?view_op=view_citation&hl=en&user=idFeW10AAAAJ&sortby=pubdate&citation_for_view=idFeW10AAAAJ:Y0pCki6q_DkC)
 
 - **[ASICON'25]** J Liu, Z Zhang, **<u>Chao Fu</u>**, J Han. ["BIND: A Batch Cache-Invalidation Framework Based on Doorbell Mechanism"](https://scholar.google.com/citations?view_op=view_citation&hl=en&user=idFeW10AAAAJ&sortby=pubdate&citation_for_view=idFeW10AAAAJ:UeHWp8X0CEIC)
+
