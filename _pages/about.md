@@ -30,7 +30,7 @@ To this end, my research span:
 My research broadly explores how advanced computer architectures can support **scalable, efficient, and deployable intelligent systems**.
 
 I also emphasize **application-driven and industry-academia-oriented research**, with demo systems including:
-  - **Edge-side image super-resolution for UAV scenarios**;
+  - **Edge-side super-resolution for UAV scenarios**;
   - **Interactive real-time VSLAM rendering on edge platforms**;
   - **Hardware-software-in-the-loop systems for embodied AI**.
 
