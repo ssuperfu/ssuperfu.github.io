@@ -66,7 +66,7 @@ My research interest includes neural machine translation and computer vision. I 
 **Chao Fu**, Li Wan, Yufan Jia, Zhiyuan Zhang, Kanheng Jiang, Jun Han
 
 <!-- [**Project**](https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=DhtAFkwAAAAJ&citation_for_view=DhtAFkwAAAAJ:ALROH1vI_8AC) <strong><span class='show_paper_citations' data='DhtAFkwAAAAJ:ALROH1vI_8AC'></span></strong> -->
-- xxxxx.
+- This work repurposes underutilized on-chip caches with reinforcement learning to expand LLC capacity for cache-sensitive workloads.
 </div>
 </div>
 
@@ -78,7 +78,7 @@ My research interest includes neural machine translation and computer vision. I 
 Yufan Jia, Zhiyuan Zhang, **Chao Fu(corresponding author)**, Li Wan, Jun Han
 
 <!-- [**Project**](https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=DhtAFkwAAAAJ&citation_for_view=DhtAFkwAAAAJ:ALROH1vI_8AC) <strong><span class='show_paper_citations' data='DhtAFkwAAAAJ:ALROH1vI_8AC'></span></strong> -->
-- xxxxx.
+- This work removes virtual-network dependence by prioritizing coherence messages to resolve NoC protocol-level deadlocks efficiently.
 </div>
 </div>
 
@@ -90,7 +90,6 @@ Yufan Jia, Zhiyuan Zhang, **Chao Fu(corresponding author)**, Li Wan, Jun Han
 Kanheng Jiang, Yongxin Lyu, Zhiyuan Zhang, Zengshi Wang, **Chao Fu(corresponding author)**, Jun Han
 
 <!-- [**Project**](https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=DhtAFkwAAAAJ&citation_for_view=DhtAFkwAAAAJ:ALROH1vI_8AC) <strong><span class='show_paper_citations' data='DhtAFkwAAAAJ:ALROH1vI_8AC'></span></strong> -->
-- xxxxx.
+- This work uses annotation-directed load sampling to expose irregular data-dependent memory patterns and improve hardware prefetching.
 </div>
 </div>
-
