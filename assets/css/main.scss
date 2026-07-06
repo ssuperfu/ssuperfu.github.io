@@ -262,6 +262,11 @@ h1:before, .anchor:before {
     gap: .35rem;
     color: $link-color;
     font-weight: 700;
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: none;
+    }
 }
 
 .demo-post {
@@ -283,10 +288,16 @@ h1:before, .anchor:before {
     .demo-post__meta {
         display: flex;
         flex-wrap: wrap;
-        gap: .45rem 1rem;
+        gap: .55rem 1.8rem;
         margin: -.75rem 0 1.25rem;
         color: mix(#fff, $text-color, 32%);
         font-size: .9rem;
+
+        span {
+            display: inline-flex;
+            align-items: center;
+            gap: .4rem;
+        }
     }
 
     .demo-post__tags {
