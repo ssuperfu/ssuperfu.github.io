@@ -3,17 +3,11 @@ main:
   - title: "About Me"
     url: "/"
 
-  - title: "News"
-    url: "/news/"
-
   - title: "Publications"
     url: "/publications/"
 
-  - title: "Honors and Awards"
-    url: "/honors-awards/"
-
-  - title: "Educations"
-    url: "/educations/"
+  - title: "System & Demos"
+    url: "/systems-demos/"
 
   - title: "Invited Talks"
     url: "/invited-talks/"
@@ -25,17 +19,11 @@ main_zh:
   - title: "关于我"
     url: "/zh/"
 
-  - title: "动态"
-    url: "/zh/news/"
-
   - title: "论文发表"
     url: "/zh/publications/"
 
-  - title: "荣誉奖励"
-    url: "/zh/honors-awards/"
-
-  - title: "教育经历"
-    url: "/zh/educations/"
+  - title: "系统与演示"
+    url: "/zh/systems-demos/"
 
   - title: "邀请报告"
     url: "/zh/invited-talks/"

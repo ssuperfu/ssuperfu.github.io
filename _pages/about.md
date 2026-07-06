@@ -22,11 +22,17 @@ redirect_from:
 I am **Chao Fu**, an Associate Researcher at **Shaoxin Laboratory, Fudan University**.
 My research focuses on **computer architecture and system-level design for embodied AI deployment**.
 To this end, my research span:
-  - Chiplet-based heterogeneous Electronic System Level design methodologies;
-  - memory systems and cache coherence for heterogeneous SoCs;
-  - domain-specific architectures for embodied AI workloads.
+  - Chiplet-based heterogeneous architecture exploration and ESL design methodologies;
+  - Memory systems and cache coherence for heterogeneous SoCs;
+  - End-to-end deployment of LLMs and domain-specific architectures for embodied AI systems.
 
 My research broadly explores how advanced computer architectures can support **scalable, efficient, and deployable intelligent systems**.
+
+I also emphasize **application-driven and industry-academia-oriented research**, with demo systems including:
+  - **edge-side image super-resolution for UAV scenarios**;
+  - **interactive real-time VSLAM rendering on edge platforms**;
+  - **hardware-software-in-the-loop systems for embodied AI**.
+
 
 <!-- (You can also use google scholar badge <a href='https://scholar.google.com/citations?user=idFeW10AAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a>). -->
 
