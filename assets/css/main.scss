@@ -228,16 +228,9 @@ h1:before, .anchor:before {
         }
     }
 
-    .demo-card__overlay {
-        position: absolute;
-        inset: 0;
-        z-index: 5;
-        border-radius: 8px;
-
-        &:focus {
-            outline: 2px solid $link-color;
-            outline-offset: 3px;
-        }
+    &:focus {
+        outline: 2px solid $link-color;
+        outline-offset: 3px;
     }
 
     .paper-box-text {
@@ -263,6 +256,8 @@ h1:before, .anchor:before {
 
 .demo-card-readmore {
     display: inline-flex;
+    position: relative;
+    z-index: 2;
     align-items: center;
     gap: .35rem;
     color: $link-color;
