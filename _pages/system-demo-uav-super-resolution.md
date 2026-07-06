@@ -35,6 +35,11 @@ author_profile: true
 
 This demo targets UAV scenarios where visual input is often bandwidth-limited, compressed, or captured under challenging operating conditions. The system performs edge-side super-resolution to improve visual quality before downstream perception or human inspection.
 
+<figure class="demo-gif">
+  <img src="{{ '/images/uav-super-resolution-demo.gif' | relative_url }}" alt="Edge-side super-resolution demo animation">
+  <figcaption>Overview animation of the edge-side UAV super-resolution workflow.</figcaption>
+</figure>
+
 ## System Design
 
 The pipeline is organized around low-latency inference, constrained memory use, and deployability on edge platforms. It is intended to evaluate how model design, memory behavior, and system scheduling interact in a realistic UAV workload.

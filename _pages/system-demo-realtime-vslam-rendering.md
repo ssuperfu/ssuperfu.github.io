@@ -35,6 +35,11 @@ author_profile: true
 
 This demo explores interactive real-time VSLAM rendering on edge platforms. It connects scene perception, state updates, and visualization in a compact workflow suitable for evaluating embodied and mobile intelligent systems.
 
+<figure class="demo-gif">
+  <img src="{{ '/images/realtime-vslam-rendering-demo.gif' | relative_url }}" alt="Interactive real-time VSLAM rendering demo animation">
+  <figcaption>Overview animation of the interactive VSLAM rendering workflow.</figcaption>
+</figure>
+
 ## System Design
 
 The system emphasizes responsiveness and end-to-end interaction. It provides a platform for studying how perception workloads, rendering pipelines, and hardware constraints shape the user-visible behavior of edge AI applications.

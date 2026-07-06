@@ -36,6 +36,11 @@ lang: zh
 
 该系统面向具身智能的软硬件在环研究，连接物理世界仿真、AI 模型执行和处理器或加速器验证，支撑从算法到硬件的端到端评估。
 
+<figure class="demo-gif">
+  <img src="{{ '/images/embodied-ai-hil-demo.gif' | relative_url }}" alt="具身智能软硬件在环系统动图">
+  <figcaption>软硬件在环系统流程概览动图。</figcaption>
+</figure>
+
 ## 系统设计
 
 该流程不只评估孤立算法指标，而是通过集成仿真、软件执行和硬件验证，暴露具身智能应用在完整部署路径上的系统瓶颈。

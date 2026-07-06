@@ -36,6 +36,11 @@ lang: zh
 
 该系统探索边缘平台上的交互式实时 VSLAM 渲染，将场景感知、状态更新和可视化展示连接成紧凑流程，用于评估具身智能和移动智能系统。
 
+<figure class="demo-gif">
+  <img src="{{ '/images/realtime-vslam-rendering-demo.gif' | relative_url }}" alt="边缘平台实时 VSLAM 渲染系统动图">
+  <figcaption>交互式 VSLAM 渲染流程概览动图。</figcaption>
+</figure>
+
 ## 系统设计
 
 系统强调响应速度与端到端交互，为研究感知负载、渲染流程和硬件约束如何共同影响边缘 AI 应用的用户可见行为提供平台。

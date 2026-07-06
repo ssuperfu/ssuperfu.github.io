@@ -35,6 +35,11 @@ author_profile: true
 
 This demo focuses on hardware-software-in-the-loop systems for embodied AI. It provides a workflow that connects physical-world simulation, AI model execution, and processor or accelerator validation.
 
+<figure class="demo-gif">
+  <img src="{{ '/images/embodied-ai-hil-demo.gif' | relative_url }}" alt="Hardware-software-in-the-loop embodied AI demo animation">
+  <figcaption>Overview animation of the hardware-software-in-the-loop workflow.</figcaption>
+</figure>
+
 ## System Design
 
 The workflow is designed to evaluate embodied intelligence applications beyond isolated algorithm benchmarks. By integrating simulation, software execution, and hardware validation, it helps expose system bottlenecks across the full deployment path.
