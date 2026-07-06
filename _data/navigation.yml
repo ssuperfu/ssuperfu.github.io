@@ -17,3 +17,28 @@ main:
 
   - title: "Invited Talks"
     url: "/invited-talks/"
+
+  - title: "中文"
+    url: "/zh/"
+
+main_zh:
+  - title: "关于我"
+    url: "/zh/"
+
+  - title: "动态"
+    url: "/zh/news/"
+
+  - title: "论文发表"
+    url: "/zh/publications/"
+
+  - title: "荣誉奖励"
+    url: "/zh/honors-awards/"
+
+  - title: "教育经历"
+    url: "/zh/educations/"
+
+  - title: "邀请报告"
+    url: "/zh/invited-talks/"
+
+  - title: "English"
+    url: "/"
