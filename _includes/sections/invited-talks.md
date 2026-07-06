@@ -1,7 +1,9 @@
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">2026.07</div><img src='{{ "/images/isca_2026_talk.png" | relative_url }}' alt="Invited talk preview" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
-**Invited Talk**
+**Gave an oral presentation at the 53rd IEEE/ACM International Symposium on Computer Architecture (ISCA 2026)**
+
+<i class="fas fa-map-marker-alt" aria-hidden="true"></i> Location TBD
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet.
 </div>
@@ -13,6 +15,8 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet 
 
 **Invited Talk**
 
+<i class="fas fa-map-marker-alt" aria-hidden="true"></i> Location TBD
+
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. | <a href="https://github.com/">[video]</a>
 </div>
 </div>
@@ -22,6 +26,8 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet 
 <div class='paper-box-text' markdown="1">
 
 **Invited Talk**
+
+<i class="fas fa-map-marker-alt" aria-hidden="true"></i> Location TBD
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. | <a href="https://github.com/">[video]</a>
 </div>
@@ -33,6 +39,8 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet 
 
 **Invited Talk**
 
+<i class="fas fa-map-marker-alt" aria-hidden="true"></i> Location TBD
+
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. | <a href="https://github.com/">[video]</a>
 </div>
 </div>
@@ -43,6 +51,8 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet 
 
 **Invited Talk**
 
+<i class="fas fa-map-marker-alt" aria-hidden="true"></i> Location TBD
+
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. | <a href="https://github.com/">[video]</a>
 </div>
 </div>
@@ -52,6 +62,8 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet 
 <div class='paper-box-text' markdown="1">
 
 **Invited Talk**
+
+<i class="fas fa-map-marker-alt" aria-hidden="true"></i> Location TBD
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. | <a href="https://github.com/">[video]</a>
 </div>
