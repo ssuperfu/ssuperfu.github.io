@@ -18,7 +18,7 @@ lang: zh
 我是付超，主要研究方向包括计算机体系结构、片上缓存管理、硬件事务内存、NoC 互连与微体系结构优化。我的工作关注如何通过软硬件协同、缓存与一致性协议设计，以及面向新型应用负载的体系结构机制提升系统性能与能效。
 
 ## 代表性论文
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">ISCA 2026</div><img src='{{ "/images/500x300.png" | relative_url }}' alt="TDMSim publication preview" width="100%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">ISCA 2026</div><img src='{{ "/images/isca_2026.png" | relative_url }}' alt="TDMSim publication preview" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 [TDMSim: Enabling High-Density and Energy-Efficient GPU DRAM Caches with 2D-Materials for Data-Intensive Applications](https://conferences.computer.org/iscapub26/pdfs/5065-3nexm57sBmVa6MJtFTiSrb/506501b255/506501b255.pdf)
@@ -29,7 +29,7 @@ lang: zh
 </div>
 </div>
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">FPL 2024</div><img src='{{ "/images/500x300.png" | relative_url }}' alt="Chimera publication preview" width="100%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">FPL 2024</div><img src='{{ "/images/fpl_2024.png" | relative_url }}' alt="Chimera publication preview" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 [Chimera: A co-simulation framework combining with gem5 and FPGA platform for efficient verification](https://ieeexplore.ieee.org/abstract/document/10705631/)
@@ -40,7 +40,7 @@ lang: zh
 </div>
 </div>
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">TPDS</div><img src='{{ "/images/500x300.png" | relative_url }}' alt="Losatm publication preview" width="100%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">TPDS 2022</div><img src='{{ "/images/tpds_2022.png" | relative_url }}' alt="Losatm publication preview" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 [Losatm: A hardware transactional memory integrated with a low-overhead scenario-awareness conflict manager](https://ieeexplore.ieee.org/abstract/document/9893383)
@@ -51,7 +51,7 @@ lang: zh
 </div>
 </div>
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">TCAD</div><img src='{{ "/images/500x300.png" | relative_url }}' alt="Homonoia publication preview" width="100%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">TAD 2025</div><img src='{{ "/images/tcad_2025_2.png" | relative_url }}' alt="Homonoia publication preview" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 [Homonoia: Reinventing underutilized cross-level cache resource using reinforcement learning](https://ieeexplore.ieee.org/abstract/document/11363629)
@@ -62,7 +62,7 @@ lang: zh
 </div>
 </div>
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">TCAD</div><img src='{{ "/images/500x300.png" | relative_url }}' alt="PCMT publication preview" width="100%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">TAD 2025</div><img src='{{ "/images/tcad_2025_1.png" | relative_url }}' alt="PCMT publication preview" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 [PCMT: Prioritizing Coherence Message Types for NoC Protocol-level Deadlock Freedom](https://ieeexplore.ieee.org/abstract/document/11142878)
@@ -73,7 +73,7 @@ Yufan Jia, Zhiyuan Zhang, **Chao Fu(corresponding author)**, Li Wan, Jun Han
 </div>
 </div>
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">TACO</div><img src='{{ "/images/500x300.png" | relative_url }}' alt="Thoth publication preview" width="100%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">TACO 2026</div><img src='{{ "/images/taco_2026.png" | relative_url }}' alt="Thoth publication preview" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 [Thoth: Uncovering Data-Dependent Memory Access Patterns via Annotation-Directed Load Sampling](https://dl.acm.org/doi/pdf/10.1145/3806835)

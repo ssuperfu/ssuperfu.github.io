@@ -28,7 +28,7 @@ My research interest includes neural machine translation and computer vision.
 </p>
 
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">ISCA 2026</div><img src='{{ "/images/500x300.png" | relative_url }}' alt="TDMSim publication preview" width="100%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">ISCA 2026</div><img src='{{ "/images/isca_2026.png" | relative_url }}' alt="TDMSim publication preview" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 [TDMSim: Enabling High-Density and Energy-Efficient GPU DRAM Caches with 2D-Materials for Data-Intensive Applications](https://conferences.computer.org/iscapub26/pdfs/5065-3nexm57sBmVa6MJtFTiSrb/506501b255/506501b255.pdf)
@@ -52,7 +52,7 @@ My research interest includes neural machine translation and computer vision.
 </div>
 </div>
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">TPDS 2022</div><img src='{{ "/images/500x300.png" | relative_url }}' alt="Losatm publication preview" width="100%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">TPDS 2022</div><img src='{{ "/images/tpds_2022.png" | relative_url }}' alt="Losatm publication preview" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 [Losatm: A hardware transactional memory integrated with a low-overhead scenario-awareness conflict manager](https://ieeexplore.ieee.org/abstract/document/9893383)
@@ -64,7 +64,7 @@ My research interest includes neural machine translation and computer vision.
 </div>
 </div>
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">TAD 2025</div><img src='{{ "/images/500x300.png" | relative_url }}' alt="Homonoia publication preview" width="100%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">TAD 2025</div><img src='{{ "/images/tcad_2025_2.png" | relative_url }}' alt="Homonoia publication preview" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 [Homonoia: Reinventing underutilized cross-level cache resource using reinforcement learning](https://ieeexplore.ieee.org/abstract/document/11363629)
@@ -76,7 +76,7 @@ My research interest includes neural machine translation and computer vision.
 </div>
 </div>
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">TAD 2025</div><img src='{{ "/images/500x300.png" | relative_url }}' alt="PCMT publication preview" width="100%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">TAD 2025</div><img src='{{ "/images/tcad_2025_1.png" | relative_url }}' alt="PCMT publication preview" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 [PCMT: Prioritizing Coherence Message Types for NoC Protocol-level Deadlock Freedom](https://ieeexplore.ieee.org/abstract/document/11142878)
