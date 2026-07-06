@@ -30,9 +30,9 @@ To this end, my research span:
 My research broadly explores how advanced computer architectures can support **scalable, efficient, and deployable intelligent systems**.
 
 I also emphasize **application-driven and industry-academia-oriented research**, with demo systems including:
-  - **Edge-side super-resolution for UAV scenarios** [demo]({{ '/systems-demos/uav-super-resolution/' | relative_url }});
-  - **Interactive real-time VSLAM rendering on edge platforms** [demo]({{ '/systems-demos/realtime-vslam-rendering/' | relative_url }});
-  - **Hardware-software-in-the-loop systems for embodied AI** [demo]({{ '/systems-demos/embodied-ai-hil/' | relative_url }}).
+  - **Edge-side super-resolution for UAV scenarios** [**>>demo details<<**]({{ '/systems-demos/uav-super-resolution/' | relative_url }});
+  - **Interactive real-time VSLAM rendering on edge platforms** [**>>demo details<<**]({{ '/systems-demos/realtime-vslam-rendering/' | relative_url }});
+  - **Hardware-software-in-the-loop systems for embodied AI** [**>>demo details<<**]({{ '/systems-demos/embodied-ai-hil/' | relative_url }}).
 
 
 <!-- (You can also use google scholar badge <a href='https://scholar.google.com/citations?user=idFeW10AAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a>). -->
