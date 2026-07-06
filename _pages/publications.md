@@ -1,7 +1,7 @@
 ---
 permalink: /publications/
 title: "Publications"
-excerpt: "Here are papers I published as authors."
+excerpt: "Selected research papers and publication highlights."
 author_profile: true
 ---
 
