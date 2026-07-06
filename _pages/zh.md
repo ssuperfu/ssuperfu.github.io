@@ -27,9 +27,9 @@ lang: zh
 总体而言，我关注先进计算机体系结构如何支撑**可扩展、高效、可部署的智能系统**。
 
 我也重视**应用驱动和产学研结合的研究**，相关演示系统包括：
-  - **面向无人机场景的边缘侧超分辨率系统**；
-  - **边缘平台上的交互式实时 VSLAM 渲染系统**；
-  - **面向具身智能的软硬件在环系统**。
+  - **面向无人机场景的边缘侧超分辨率系统** [演示]({{ '/zh/systems-demos/uav-super-resolution/' | relative_url }})；
+  - **边缘平台上的交互式实时 VSLAM 渲染系统** [演示]({{ '/zh/systems-demos/realtime-vslam-rendering/' | relative_url }})；
+  - **面向具身智能的软硬件在环系统** [演示]({{ '/zh/systems-demos/embodied-ai-hil/' | relative_url }})。
 
 ## 代表性论文
 <p class="section-intro">
