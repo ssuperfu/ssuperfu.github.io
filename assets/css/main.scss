@@ -136,6 +136,7 @@
         > div {
             position: relative;
             width: 100%;
+            max-width: 420px;
         }
 
         img {
@@ -201,11 +202,13 @@ h1:before, .anchor:before {
     padding: .28rem .75rem;
     position: absolute;
     top: .65rem;
-    left: .65rem;
+    left: -.45rem;
+    z-index: 1;
     color: white;
     background-color: $link-color;
     border-radius: 4px;
     font-size: .78em;
     font-weight: 700;
     line-height: 1.2;
+    box-shadow: 0 3px 8px rgba(38, 50, 56, .18);
 }
