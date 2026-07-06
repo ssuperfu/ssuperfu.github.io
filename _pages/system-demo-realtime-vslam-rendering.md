@@ -8,7 +8,7 @@ author_profile: true
 <article class="demo-post" markdown="1">
 
 <figure class="demo-post__cover">
-  <img src='{{ "/images/500x300.png" | relative_url }}' alt="Interactive real-time VSLAM rendering on edge platforms">
+  <img src='{{ "/images/vslam_demo.png" | relative_url }}' alt="Interactive real-time VSLAM rendering on edge platforms">
 </figure>
 
 # Interactive real-time VSLAM rendering on edge platforms

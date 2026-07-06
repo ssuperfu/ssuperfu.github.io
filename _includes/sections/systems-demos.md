@@ -10,7 +10,7 @@
 </div>
 </div>
 
-<div class='paper-box demo-card' role="link" tabindex="0" onclick="window.location.href='{{ '/systems-demos/realtime-vslam-rendering/' | relative_url }}'" onkeydown="if(event.key === 'Enter' || event.key === ' ') { window.location.href='{{ '/systems-demos/realtime-vslam-rendering/' | relative_url }}'; }"><div class='paper-box-image'><div><div class="badge">VSLAM</div><img src='{{ "/images/500x300.png" | relative_url }}' alt="Interactive real-time VSLAM rendering demo preview" width="100%"></div></div>
+<div class='paper-box demo-card' role="link" tabindex="0" onclick="window.location.href='{{ '/systems-demos/realtime-vslam-rendering/' | relative_url }}'" onkeydown="if(event.key === 'Enter' || event.key === ' ') { window.location.href='{{ '/systems-demos/realtime-vslam-rendering/' | relative_url }}'; }"><div class='paper-box-image'><div><div class="badge">VSLAM</div><img src='{{ "/images/vslam_demo.png" | relative_url }}' alt="Interactive real-time VSLAM rendering demo preview" width="100%"></div></div>
 <div class='paper-box-text'>
 <h2>Interactive real-time VSLAM rendering on edge platforms</h2>
 <p>An interactive edge rendering pipeline for VSLAM scenarios, bridging real-time scene perception, visualization, and architecture-aware system evaluation.</p>
@@ -18,7 +18,7 @@
 </div>
 </div>
 
-<div class='paper-box demo-card' role="link" tabindex="0" onclick="window.location.href='{{ '/systems-demos/embodied-ai-hil/' | relative_url }}'" onkeydown="if(event.key === 'Enter' || event.key === ' ') { window.location.href='{{ '/systems-demos/embodied-ai-hil/' | relative_url }}'; }"><div class='paper-box-image'><div><div class="badge">HIL</div><img src='{{ "/images/500x300.png" | relative_url }}' alt="Hardware-software-in-the-loop embodied AI demo preview" width="100%"></div></div>
+<div class='paper-box demo-card' role="link" tabindex="0" onclick="window.location.href='{{ '/systems-demos/embodied-ai-hil/' | relative_url }}'" onkeydown="if(event.key === 'Enter' || event.key === ' ') { window.location.href='{{ '/systems-demos/embodied-ai-hil/' | relative_url }}'; }"><div class='paper-box-image'><div><div class="badge">HIL</div><img src='{{ "/images/embodied_ai_demo.png" | relative_url }}' alt="Hardware-software-in-the-loop embodied AI demo preview" width="100%"></div></div>
 <div class='paper-box-text'>
 <h2>Hardware-software-in-the-loop systems for embodied AI</h2>
 <p>A hardware-software-in-the-loop workflow that combines physical-world simulation, AI execution, and processor validation for embodied intelligence research.</p>

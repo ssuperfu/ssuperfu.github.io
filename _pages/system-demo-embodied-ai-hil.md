@@ -8,7 +8,7 @@ author_profile: true
 <article class="demo-post" markdown="1">
 
 <figure class="demo-post__cover">
-  <img src='{{ "/images/500x300.png" | relative_url }}' alt="Hardware-software-in-the-loop systems for embodied AI">
+  <img src='{{ "/images/embodied_ai_demo.png" | relative_url }}' alt="Hardware-software-in-the-loop systems for embodied AI">
 </figure>
 
 # Hardware-software-in-the-loop systems for embodied AI
