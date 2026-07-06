@@ -2,7 +2,7 @@
   Selected research systems, prototypes, and demos connecting architecture research with deployable intelligent systems.
 </p>
 
-<div class='paper-box demo-card' role="link" tabindex="0" onclick="window.location.href='{{ '/systems-demos/uav-super-resolution/' | relative_url }}'" onkeydown="if(event.key === 'Enter' || event.key === ' ') { window.location.href='{{ '/systems-demos/uav-super-resolution/' | relative_url }}'; }"><div class='paper-box-image'><div><div class="badge">Edge AI</div><img src='{{ "/images/500x300.png" | relative_url }}' alt="Edge-side super-resolution demo preview" width="100%"></div></div>
+<div class='paper-box demo-card' role="link" tabindex="0" onclick="window.location.href='{{ '/systems-demos/uav-super-resolution/' | relative_url }}'" onkeydown="if(event.key === 'Enter' || event.key === ' ') { window.location.href='{{ '/systems-demos/uav-super-resolution/' | relative_url }}'; }"><div class='paper-box-image'><div><div class="badge">Edge AI</div><img src='{{ "/images/uav-super-resolution-demo.png" | relative_url }}' alt="Edge-side super-resolution demo preview" width="100%"></div></div>
 <div class='paper-box-text'>
 <h2>Edge-side super-resolution for UAV scenarios</h2>
 <p>A lightweight edge-side vision system that enhances low-resolution UAV imagery under constrained computing, bandwidth, and latency budgets.</p>
