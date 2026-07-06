@@ -8,7 +8,7 @@ author_profile: true
 <article class="demo-post" markdown="1">
 
 <figure class="demo-post__cover">
-  <img src='{{ "/images/500x300.png" | relative_url }}' alt="Edge-side super-resolution for UAV scenarios">
+  <img src='{{ "/images/uav-super-resolution-demo.png" | relative_url }}' alt="Edge-side super-resolution for UAV scenarios">
 </figure>
 
 # Edge-side super-resolution for UAV scenarios
@@ -34,11 +34,6 @@ author_profile: true
 ## Overview
 
 This demo targets UAV scenarios where visual input is often bandwidth-limited, compressed, or captured under challenging operating conditions. The system performs edge-side super-resolution to improve visual quality before downstream perception or human inspection.
-
-<figure class="demo-gif">
-  <img src="{{ '/images/uav-super-resolution-demo.gif' | relative_url }}" alt="Edge-side super-resolution demo animation">
-  <figcaption>Overview animation of the edge-side UAV super-resolution workflow.</figcaption>
-</figure>
 
 ## System Design
 
