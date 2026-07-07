@@ -69,7 +69,7 @@ lang: zh
 </div>
 </div>
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">TAD 2025</div><img src='{{ "/images/tcad_2025_2.png" | relative_url }}' alt="Homonoia publication preview" width="100%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">TCAD 2025</div><img src='{{ "/images/tcad_2025_2.png" | relative_url }}' alt="Homonoia publication preview" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 [Homonoia: Reinventing underutilized cross-level cache resource using reinforcement learning](https://ieeexplore.ieee.org/abstract/document/11363629)
@@ -80,7 +80,7 @@ lang: zh
 </div>
 </div>
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">TAD 2025</div><img src='{{ "/images/tcad_2025_1.png" | relative_url }}' alt="PCMT publication preview" width="100%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">TCAD 2025</div><img src='{{ "/images/tcad_2025_1.png" | relative_url }}' alt="PCMT publication preview" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 [PCMT: Prioritizing Coherence Message Types for NoC Protocol-level Deadlock Freedom](https://ieeexplore.ieee.org/abstract/document/11142878)
