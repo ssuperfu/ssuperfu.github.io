@@ -48,7 +48,7 @@ I also emphasize **application-driven and industry-academia-oriented research**,
 
 [TDMSim: Enabling High-Density and Energy-Efficient GPU DRAM Caches with 2D-Materials for Data-Intensive Applications](https://conferences.computer.org/iscapub26/pdfs/5065-3nexm57sBmVa6MJtFTiSrb/506501b255/506501b255.pdf)
 
-**Chao Fu<sup>†</sup>**, Jingyang Zheng<sup>†</sup>, Xinliu He, Xiangqi Dong, Zheng Cao, Yuning Zhan, Wenzhong Bao, Peng Zhou, Jun Han
+**Chao Fu<sup>†</sup>**, Jingyang Zheng<sup>†</sup>, Xinliu He, Xiangqi Dong, Zheng Cao, Yuning Zhan, Wenzhong Bao, Peng Zhou, <u>Jun Han</u>
 
 <!-- [**Project**](https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=DhtAFkwAAAAJ&citation_for_view=DhtAFkwAAAAJ:ALROH1vI_8AC) <strong><span class='show_paper_citations' data='DhtAFkwAAAAJ:ALROH1vI_8AC'></span></strong> -->
 - This work bridges 2D-material devices and GPU architecture, achieving substantial performance and energy gains through retention-aware cache design.
@@ -60,7 +60,7 @@ I also emphasize **application-driven and industry-academia-oriented research**,
 
 [Chimera: A co-simulation framework combining with gem5 and FPGA platform for efficient verification](https://ieeexplore.ieee.org/abstract/document/10705631/)
 
-**Chao Fu**, Zengshi Wang, Jun Han
+**Chao Fu**, Zengshi Wang, <u>Jun Han</u>
 
 <!-- [**Project**](https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=DhtAFkwAAAAJ&citation_for_view=DhtAFkwAAAAJ:ALROH1vI_8AC) <strong><span class='show_paper_citations' data='DhtAFkwAAAAJ:ALROH1vI_8AC'></span></strong> -->
 - This work tightly integrates software simulation and hardware emulation to streamline SoC-level evaluation of RTL designs.
@@ -72,7 +72,7 @@ I also emphasize **application-driven and industry-academia-oriented research**,
 
 [Losatm: A hardware transactional memory integrated with a low-overhead scenario-awareness conflict manager](https://ieeexplore.ieee.org/abstract/document/9893383)
 
-**Chao Fu**, Li Wan, Jun Han
+**Chao Fu**, Li Wan, <u>Jun Han</u>
 
 <!-- [**Project**](https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=DhtAFkwAAAAJ&citation_for_view=DhtAFkwAAAAJ:ALROH1vI_8AC) <strong><span class='show_paper_citations' data='DhtAFkwAAAAJ:ALROH1vI_8AC'></span></strong> -->
 - This work adaptively coordinates contention handling to improve multicore concurrency with minimal hardware cost.
@@ -84,7 +84,7 @@ I also emphasize **application-driven and industry-academia-oriented research**,
 
 [Homonoia: Reinventing underutilized cross-level cache resource using reinforcement learning](https://ieeexplore.ieee.org/abstract/document/11363629)
 
-**Chao Fu**, Li Wan, Yufan Jia, Zhiyuan Zhang, Kanheng Jiang, Jun Han
+**Chao Fu**, Li Wan, Yufan Jia, Zhiyuan Zhang, Kanheng Jiang, <u>Jun Han</u>
 
 <!-- [**Project**](https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=DhtAFkwAAAAJ&citation_for_view=DhtAFkwAAAAJ:ALROH1vI_8AC) <strong><span class='show_paper_citations' data='DhtAFkwAAAAJ:ALROH1vI_8AC'></span></strong> -->
 - This work repurposes underutilized on-chip caches with reinforcement learning to expand LLC capacity for cache-sensitive workloads.
@@ -96,7 +96,7 @@ I also emphasize **application-driven and industry-academia-oriented research**,
 
 [PCMT: Prioritizing Coherence Message Types for NoC Protocol-level Deadlock Freedom](https://ieeexplore.ieee.org/abstract/document/11142878)
 
-Yufan Jia, Zhiyuan Zhang, **<u>Chao Fu</u>**, Li Wan, Jun Han
+Yufan Jia, Zhiyuan Zhang, **<u>Chao Fu</u>**, Li Wan, <u>Jun Han</u>
 
 <!-- [**Project**](https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=DhtAFkwAAAAJ&citation_for_view=DhtAFkwAAAAJ:ALROH1vI_8AC) <strong><span class='show_paper_citations' data='DhtAFkwAAAAJ:ALROH1vI_8AC'></span></strong> -->
 - This work removes virtual-network dependence by prioritizing coherence messages to resolve NoC protocol-level deadlocks efficiently.
@@ -108,7 +108,7 @@ Yufan Jia, Zhiyuan Zhang, **<u>Chao Fu</u>**, Li Wan, Jun Han
 
 [Thoth: Uncovering Data-Dependent Memory Access Patterns via Annotation-Directed Load Sampling](https://dl.acm.org/doi/pdf/10.1145/3806835)
 
-Kanheng Jiang, Yongxin Lyu, Zhiyuan Zhang, Zengshi Wang, **<u>Chao Fu</u>**, Jun Han
+Kanheng Jiang, Yongxin Lyu, Zhiyuan Zhang, Zengshi Wang, **<u>Chao Fu</u>**, <u>Jun Han</u>
 
 <!-- [**Project**](https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=DhtAFkwAAAAJ&citation_for_view=DhtAFkwAAAAJ:ALROH1vI_8AC) <strong><span class='show_paper_citations' data='DhtAFkwAAAAJ:ALROH1vI_8AC'></span></strong> -->
 - This work uses annotation-directed load sampling to expose irregular data-dependent memory patterns and improve hardware prefetching.

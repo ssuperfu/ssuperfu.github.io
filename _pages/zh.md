@@ -41,7 +41,7 @@ lang: zh
 
 [TDMSim: Enabling High-Density and Energy-Efficient GPU DRAM Caches with 2D-Materials for Data-Intensive Applications](https://conferences.computer.org/iscapub26/pdfs/5065-3nexm57sBmVa6MJtFTiSrb/506501b255/506501b255.pdf)
 
-**傅超<sup>†</sup>**, Jingyang Zheng<sup>†</sup>, Xinliu He, Xiangqi Dong, Zheng Cao, Yuning Zhan, Wenzhong Bao, Peng Zhou, Jun Han
+**傅超<sup>†</sup>**, Jingyang Zheng<sup>†</sup>, Xinliu He, Xiangqi Dong, Zheng Cao, Yuning Zhan, Wenzhong Bao, Peng Zhou, <u>Jun Han</u>
 
 - 该工作连接二维材料器件与 GPU 体系结构，通过保留感知的缓存设计提升性能与能效。
 </div>
@@ -52,7 +52,7 @@ lang: zh
 
 [Chimera: A co-simulation framework combining with gem5 and FPGA platform for efficient verification](https://ieeexplore.ieee.org/abstract/document/10705631/)
 
-**傅超**, Zengshi Wang, Jun Han
+**傅超**, Zengshi Wang, <u>Jun Han</u>
 
 - 该工作紧密结合软件仿真与硬件仿真，加速 RTL 设计的 SoC 级评估流程。
 </div>
@@ -63,7 +63,7 @@ lang: zh
 
 [Losatm: A hardware transactional memory integrated with a low-overhead scenario-awareness conflict manager](https://ieeexplore.ieee.org/abstract/document/9893383)
 
-**傅超**, Li Wan, Jun Han
+**傅超**, Li Wan, <u>Jun Han</u>
 
 - 该工作以低硬件开销自适应协调冲突处理，提升多核并发执行效率。
 </div>
@@ -74,7 +74,7 @@ lang: zh
 
 [Homonoia: Reinventing underutilized cross-level cache resource using reinforcement learning](https://ieeexplore.ieee.org/abstract/document/11363629)
 
-**傅超**, Li Wan, Yufan Jia, Zhiyuan Zhang, Kanheng Jiang, Jun Han
+**傅超**, Li Wan, Yufan Jia, Zhiyuan Zhang, Kanheng Jiang, <u>Jun Han</u>
 
 - 该工作利用强化学习重用未充分利用的片上缓存资源，为缓存敏感应用扩展 LLC 容量。
 </div>
@@ -85,7 +85,7 @@ lang: zh
 
 [PCMT: Prioritizing Coherence Message Types for NoC Protocol-level Deadlock Freedom](https://ieeexplore.ieee.org/abstract/document/11142878)
 
-Yufan Jia, Zhiyuan Zhang, **<u>傅超</u>**, Li Wan, Jun Han
+Yufan Jia, Zhiyuan Zhang, **<u>傅超</u>**, Li Wan, <u>Jun Han</u>
 
 - 该工作通过一致性消息优先级摆脱虚拟网络依赖，高效解决 NoC 协议级死锁。
 </div>
@@ -96,7 +96,7 @@ Yufan Jia, Zhiyuan Zhang, **<u>傅超</u>**, Li Wan, Jun Han
 
 [Thoth: Uncovering Data-Dependent Memory Access Patterns via Annotation-Directed Load Sampling](https://dl.acm.org/doi/pdf/10.1145/3806835)
 
-Kanheng Jiang, Yongxin Lyu, Zhiyuan Zhang, Zengshi Wang, **<u>傅超</u>**, Jun Han
+Kanheng Jiang, Yongxin Lyu, Zhiyuan Zhang, Zengshi Wang, **<u>傅超</u>**, <u>Jun Han</u>
 
 - 该工作通过注解导向的 load 采样识别不规则数据依赖访存模式，并提升硬件预取效果。
 </div>
