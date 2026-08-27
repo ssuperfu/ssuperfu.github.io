@@ -58,6 +58,17 @@ Zengshi Wang, Zhuoyuan Yang, Wenbin Liao, Xin Yang, Xiaoyan Xiang, Jianyi Meng, 
 </div>
 </div>
 
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">TC 2026</div><img src='{{ "/images/tc_2026.png" | relative_url }}' alt="Virtual FIFO publication preview" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+[Constructing Virtual FIFOs in CPU Cache Hierarchy for Software Data Plane Orchestration](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=12)
+
+Zhiyuan Zhang, Jialin Liu, Zengshi Wang, Kanheng Jiang, **<u>傅超</u>**, <u>Jun Han</u>
+
+- 该工作提出 FRM，通过在 CPU 缓存层次结构中虚拟化每个 RXQ 的 FIFO，提升软件数据平面性能与缓存隔离能力。
+</div>
+</div>
+
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">TPDS 2022</div><img src='{{ "/images/tpds_2022.png" | relative_url }}' alt="Losatm publication preview" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
@@ -88,17 +99,6 @@ Zengshi Wang, Zhuoyuan Yang, Wenbin Liao, Xin Yang, Xiaoyan Xiang, Jianyi Meng, 
 **傅超**, Zengshi Wang, <u>Jun Han</u>
 
 - 该工作紧密结合软件仿真与硬件仿真，加速 RTL 设计的 SoC 级评估流程。
-</div>
-</div>
-
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">TC 2026</div><img src='{{ "/images/tc_2026.png" | relative_url }}' alt="Virtual FIFO publication preview" width="100%"></div></div>
-<div class='paper-box-text' markdown="1">
-
-[Constructing Virtual FIFOs in CPU Cache Hierarchy for Software Data Plane Orchestration](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=12)
-
-Zhiyuan Zhang, Jialin Liu, Zengshi Wang, Kanheng Jiang, **<u>傅超</u>**, <u>Jun Han</u>
-
-- 该工作提出 FRM，通过在 CPU 缓存层次结构中虚拟化每个 RXQ 的 FIFO，提升软件数据平面性能与缓存隔离能力。
 </div>
 </div>
 

@@ -67,6 +67,18 @@ Zengshi Wang, Zhuoyuan Yang, Wenbin Liao, Xin Yang, Xiaoyan Xiang, Jianyi Meng, 
 </div>
 </div>
 
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">TC 2026</div><img src='{{ "/images/tc_2026.png" | relative_url }}' alt="Losatm publication preview" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+[Constructing Virtual FIFOs in CPU Cache Hierarchy for Software Data Plane Orchestration](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=12)
+
+Zhiyuan Zhang, Jialin Liu, Zengshi Wang, Kanheng Jiang, **<u>Chao Fu</u>**, <u>Jun Han</u>
+
+<!-- [**Project**](https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=DhtAFkwAAAAJ&citation_for_view=DhtAFkwAAAAJ:ALROH1vI_8AC) <strong><span class='show_paper_citations' data='DhtAFkwAAAAJ:ALROH1vI_8AC'></span></strong> -->
+- This paper introduces FRM, which virtualizes per-RXQ FIFOs across the CPU cache hierarchy to improve software data-plane performance and cache isolation.
+</div>
+</div>
+
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">TPDS 2022</div><img src='{{ "/images/tpds_2022.png" | relative_url }}' alt="Losatm publication preview" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
@@ -103,18 +115,6 @@ Zengshi Wang, Zhuoyuan Yang, Wenbin Liao, Xin Yang, Xiaoyan Xiang, Jianyi Meng, 
 </div>
 </div>
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">TC 2026</div><img src='{{ "/images/tc_2026.png" | relative_url }}' alt="Losatm publication preview" width="100%"></div></div>
-<div class='paper-box-text' markdown="1">
-
-[Constructing Virtual FIFOs in CPU Cache Hierarchy for Software Data Plane Orchestration](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=12)
-
-Zhiyuan Zhang, Jialin Liu, Zengshi Wang, Kanheng Jiang, **<u>Chao Fu</u>**, <u>Jun Han</u>
-
-<!-- [**Project**](https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=DhtAFkwAAAAJ&citation_for_view=DhtAFkwAAAAJ:ALROH1vI_8AC) <strong><span class='show_paper_citations' data='DhtAFkwAAAAJ:ALROH1vI_8AC'></span></strong> -->
-- This paper introduces FRM, which virtualizes per-RXQ FIFOs across the CPU cache hierarchy to improve software data-plane performance and cache isolation.
-</div>
-</div>
-
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">TCAD 2025</div><img src='{{ "/images/tcad_2025_1.png" | relative_url }}' alt="PCMT publication preview" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
@@ -138,4 +138,3 @@ Kanheng Jiang, Yongxin Lyu, Zhiyuan Zhang, Zengshi Wang, **<u>Chao Fu</u>**, <u>
 - This work uses annotation-directed load sampling to expose irregular data-dependent memory patterns and improve hardware prefetching.
 </div>
 </div>
-
