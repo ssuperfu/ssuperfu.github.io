@@ -39,9 +39,21 @@ I also emphasize **application-driven and industry-academia-oriented research**,
 
 ## Selected Publications
 <p class="section-intro">
-  <strong>Someone</strong> denotes first authors; <strong>Someone<sup>†</sup></strong> denotes equal contributions; <strong><u>Someone</u></strong> denotes corresponding authors.
+  <strong>Someone<sup>†</sup></strong> denotes equal contributions; <strong><u>Someone</u></strong> denotes corresponding authors.
 </p>
 
+
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">MICRO 2026</div><img src='{{ "/images/micro_2026.png" | relative_url }}' alt="TDMSim publication preview" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+[SPMC: Speculative Multicast for GPU Address Translation Sharing](https://microarch.org/micro59/)
+
+Zengshi Wang, Zhuoyuan Yang, Wenbin Liao, Xin Yang, Xiaoyan Xiang, Jianyi Meng, **<u>Chao Fu</u>**, <u>Jun Han</u>
+
+<!-- [**Project**](https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=DhtAFkwAAAAJ&citation_for_view=DhtAFkwAAAAJ:ALROH1vI_8AC) <strong><span class='show_paper_citations' data='DhtAFkwAAAAJ:ALROH1vI_8AC'></span></strong> -->
+- This work introduces SPMC, a sharing-aware speculative multicast mechanism that reduces repeated GPU TLB misses by proactively distributing address translations across SMs.
+</div>
+</div>
 
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">ISCA 2026</div><img src='{{ "/images/isca_2026.png" | relative_url }}' alt="TDMSim publication preview" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
@@ -52,18 +64,6 @@ I also emphasize **application-driven and industry-academia-oriented research**,
 
 <!-- [**Project**](https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=DhtAFkwAAAAJ&citation_for_view=DhtAFkwAAAAJ:ALROH1vI_8AC) <strong><span class='show_paper_citations' data='DhtAFkwAAAAJ:ALROH1vI_8AC'></span></strong> -->
 - This work bridges 2D-material devices and GPU architecture, achieving substantial performance and energy gains through retention-aware cache design.
-</div>
-</div>
-
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">FPL 2024</div><img src='{{ "/images/fpl_2024.png" | relative_url }}' alt="Chimera publication preview" width="100%"></div></div>
-<div class='paper-box-text' markdown="1">
-
-[Chimera: A co-simulation framework combining with gem5 and FPGA platform for efficient verification](https://ieeexplore.ieee.org/abstract/document/10705631/)
-
-**Chao Fu**, Zengshi Wang, <u>Jun Han</u>
-
-<!-- [**Project**](https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=DhtAFkwAAAAJ&citation_for_view=DhtAFkwAAAAJ:ALROH1vI_8AC) <strong><span class='show_paper_citations' data='DhtAFkwAAAAJ:ALROH1vI_8AC'></span></strong> -->
-- This work tightly integrates software simulation and hardware emulation to streamline SoC-level evaluation of RTL designs.
 </div>
 </div>
 
@@ -88,6 +88,30 @@ I also emphasize **application-driven and industry-academia-oriented research**,
 
 <!-- [**Project**](https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=DhtAFkwAAAAJ&citation_for_view=DhtAFkwAAAAJ:ALROH1vI_8AC) <strong><span class='show_paper_citations' data='DhtAFkwAAAAJ:ALROH1vI_8AC'></span></strong> -->
 - This work repurposes underutilized on-chip caches with reinforcement learning to expand LLC capacity for cache-sensitive workloads.
+</div>
+</div>
+
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">FPL 2024</div><img src='{{ "/images/fpl_2024.png" | relative_url }}' alt="Chimera publication preview" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+[Chimera: A co-simulation framework combining with gem5 and FPGA platform for efficient verification](https://ieeexplore.ieee.org/abstract/document/10705631/)
+
+**Chao Fu**, Zengshi Wang, <u>Jun Han</u>
+
+<!-- [**Project**](https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=DhtAFkwAAAAJ&citation_for_view=DhtAFkwAAAAJ:ALROH1vI_8AC) <strong><span class='show_paper_citations' data='DhtAFkwAAAAJ:ALROH1vI_8AC'></span></strong> -->
+- This work tightly integrates software simulation and hardware emulation to streamline SoC-level evaluation of RTL designs.
+</div>
+</div>
+
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">TC 2026</div><img src='{{ "/images/tc_2026.png" | relative_url }}' alt="Losatm publication preview" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+[Constructing Virtual FIFOs in CPU Cache Hierarchy for Software Data Plane Orchestration](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=12)
+
+Zhiyuan Zhang, Jialin Liu, Zengshi Wang, Kanheng Jiang, **<u>Chao Fu</u>**, <u>Jun Han</u>
+
+<!-- [**Project**](https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=DhtAFkwAAAAJ&citation_for_view=DhtAFkwAAAAJ:ALROH1vI_8AC) <strong><span class='show_paper_citations' data='DhtAFkwAAAAJ:ALROH1vI_8AC'></span></strong> -->
+- This paper introduces FRM, which virtualizes per-RXQ FIFOs across the CPU cache hierarchy to improve software data-plane performance and cache isolation.
 </div>
 </div>
 

@@ -1,3 +1,14 @@
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">2026.08</div><img src='{{ "/images/swyt_talk.jpg" | relative_url }}' alt="Invited talk preview" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+**Presents the Physical AI Data Intelligence Engine at the Shanghai Regional of the 2026 Shaoxing Education–Technology–Talent Innovation Commercialization Competition**
+
+<i class="fas fa-map-marker-alt" aria-hidden="true"></i> Shanghai, China
+
+The presentation introduces a full-stack data infrastructure that transforms real-world scenes and human actions into high-quality training data for Physical AI.
+</div>
+</div>
+
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">2026.07</div><img src='{{ "/images/isca_2026_talk.png" | relative_url }}' alt="Invited talk preview" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 

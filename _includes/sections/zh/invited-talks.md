@@ -1,3 +1,14 @@
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">2026.08</div><img src='{{ "/images/swyt_talk.jpg" | relative_url }}' alt="邀请报告预览图" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+**在 2026 绍兴教育科技人才一体化创新成果转化大赛上海赛区展示 Physical AI 数据智能引擎**
+
+<i class="fas fa-map-marker-alt" aria-hidden="true"></i> Shanghai, China
+
+报告介绍一套全栈数据基础设施，将真实世界场景与人类动作转化为用于 Physical AI 训练的高质量数据。
+</div>
+</div>
+
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">2026.07</div><img src='{{ "/images/isca_2026_talk.png" | relative_url }}' alt="邀请报告预览图" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
