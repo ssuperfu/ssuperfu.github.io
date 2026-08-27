@@ -33,8 +33,19 @@ lang: zh
 
 ## 代表性论文
 <p class="section-intro">
-  <strong>Someone</strong> 表示第一作者；<strong>Someone<sup>†</sup></strong> 表示共同一作；<strong><u>Someone</u></strong> 表示通讯作者。
+  <strong>Someone<sup>†</sup></strong> 表示共同一作；<strong><u>Someone</u></strong> 表示通讯作者。
 </p>
+
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">MICRO 2026</div><img src='{{ "/images/micro_2026.png" | relative_url }}' alt="SPMC publication preview" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+[SPMC: Speculative Multicast for GPU Address Translation Sharing](https://microarch.org/micro59/)
+
+Zengshi Wang, Zhuoyuan Yang, Wenbin Liao, Xin Yang, Xiaoyan Xiang, Jianyi Meng, **<u>傅超</u>**, <u>Jun Han</u>
+
+- 该工作提出 SPMC，一种面向共享感知的推测组播机制，通过在 SM 之间主动分发地址转换，减少重复的 GPU TLB 缺失。
+</div>
+</div>
 
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">ISCA 2026</div><img src='{{ "/images/isca_2026.png" | relative_url }}' alt="TDMSim publication preview" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
@@ -44,17 +55,6 @@ lang: zh
 **傅超<sup>†</sup>**, Jingyang Zheng<sup>†</sup>, Xinliu He, Xiangqi Dong, Zheng Cao, Yuning Zhan, Wenzhong Bao, Peng Zhou, <u>Jun Han</u>
 
 - 该工作连接二维材料器件与 GPU 体系结构，通过保留感知的缓存设计提升性能与能效。
-</div>
-</div>
-
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">FPL 2024</div><img src='{{ "/images/fpl_2024.png" | relative_url }}' alt="Chimera publication preview" width="100%"></div></div>
-<div class='paper-box-text' markdown="1">
-
-[Chimera: A co-simulation framework combining with gem5 and FPGA platform for efficient verification](https://ieeexplore.ieee.org/abstract/document/10705631/)
-
-**傅超**, Zengshi Wang, <u>Jun Han</u>
-
-- 该工作紧密结合软件仿真与硬件仿真，加速 RTL 设计的 SoC 级评估流程。
 </div>
 </div>
 
@@ -77,6 +77,28 @@ lang: zh
 **傅超**, Li Wan, Yufan Jia, Zhiyuan Zhang, Kanheng Jiang, <u>Jun Han</u>
 
 - 该工作利用强化学习重用未充分利用的片上缓存资源，为缓存敏感应用扩展 LLC 容量。
+</div>
+</div>
+
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">FPL 2024</div><img src='{{ "/images/fpl_2024.png" | relative_url }}' alt="Chimera publication preview" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+[Chimera: A co-simulation framework combining with gem5 and FPGA platform for efficient verification](https://ieeexplore.ieee.org/abstract/document/10705631/)
+
+**傅超**, Zengshi Wang, <u>Jun Han</u>
+
+- 该工作紧密结合软件仿真与硬件仿真，加速 RTL 设计的 SoC 级评估流程。
+</div>
+</div>
+
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">TC 2026</div><img src='{{ "/images/tc_2026.png" | relative_url }}' alt="Virtual FIFO publication preview" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+[Constructing Virtual FIFOs in CPU Cache Hierarchy for Software Data Plane Orchestration](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=12)
+
+Zhiyuan Zhang, Jialin Liu, Zengshi Wang, Kanheng Jiang, **<u>傅超</u>**, <u>Jun Han</u>
+
+- 该工作提出 FRM，通过在 CPU 缓存层次结构中虚拟化每个 RXQ 的 FIFO，提升软件数据平面性能与缓存隔离能力。
 </div>
 </div>
 
