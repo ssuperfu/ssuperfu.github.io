@@ -9,6 +9,17 @@
 </div>
 </div>
 
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">2026.09</div><img src='{{ "/images/shaoxing_2026_final_talk.png" | relative_url }}' alt="傅超在 2026 绍兴创新成果转化大赛总决赛路演" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+**2026 绍兴创新成果转化大赛总决赛：Physical AI 数据智造引擎**
+
+<i class="fas fa-map-marker-alt" aria-hidden="true"></i> Shaoxing, China · [报道](https://mp.weixin.qq.com/s/YyMPKu9H3-9v8FvC2HCL6A)
+
+展示贯通场景重建、仿真数据生成、策略训练与真机验证的数据基础设施，项目获大赛三等奖。
+</div>
+</div>
+
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">2026.08</div><img src='{{ "/images/swyt_talk.jpg" | relative_url }}' alt="邀请报告预览图" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 

@@ -9,6 +9,17 @@ Presented RTL cache simulation, YOLO convolution, and wujian100-based Gomoku exp
 </div>
 </div>
 
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">2026.09</div><img src='{{ "/images/shaoxing_2026_final_talk.png" | relative_url }}' alt="Chao Fu presenting the Physical AI Data Engine at the 2026 Shaoxing competition finals" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+**Physical AI Data Engine at the 2026 Shaoxing Innovation Commercialization Competition Finals**
+
+<i class="fas fa-map-marker-alt" aria-hidden="true"></i> Shaoxing, China · [News](https://mp.weixin.qq.com/s/YyMPKu9H3-9v8FvC2HCL6A)
+
+Presented an integrated pipeline for scene reconstruction, simulation data generation, policy training, and real-world validation. The Physical AI Data Engine received Third Prize.
+</div>
+</div>
+
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">2026.08</div><img src='{{ "/images/swyt_talk.jpg" | relative_url }}' alt="Invited talk preview" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
