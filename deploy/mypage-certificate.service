@@ -1,0 +1,7 @@
+[Unit]
+Description=Renew personal homepage HTTPS certificate
+After=docker.service
+Requires=docker.service
+[Service]
+Type=oneshot
+ExecStart=/usr/local/sbin/mypage-renew-certificate

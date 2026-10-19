@@ -6,6 +6,8 @@
 
 **Someone<sup>†</sup>** 表示共同一作；**<u>Someone</u>** 表示通讯作者。
 
+- **[ASP-DAC'27]** Yufan Jia, Zhiyuan Zhang, Jingyang Zheng, **<u>傅超</u>**, <u>Jun Han</u>. ["S-cache Directory: Efficient Sharer Tracking for Entry-Constrained Coherence Directories"](https://easychair.org/smart-program/ASP-DAC2027/2027-01-25.html)
+
 - **[MICRO'26]** Zengshi Wang, Zhuoyuan Yang, Wenbin Liao, Xin Yang, Xiaoyan Xiang, Jianyi Meng, **<u>傅超</u>**, <u>Jun Han</u>. ["SPMC: Speculative Multicast for GPU Address Translation Sharing"](https://microarch.org/micro59/)
 
 - **[TC'26]** Zhiyuan Zhang, Jialin Liu, Zengshi Wang, Kanheng Jiang, **<u>傅超</u>**, <u>Jun Han</u>. ["Constructing Virtual FIFOs in CPU Cache Hierarchy for Software Data Plane Orchestration"](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=12)
@@ -13,6 +15,8 @@
 - **[ISCA'26]** **傅超<sup>†</sup>**, Jingyang Zheng<sup>†</sup>, Xinliu He, Xiangqi Dong, Zheng Cao, Yuning Zhan, Wenzhong Bao, Peng Zhou, <u>Jun Han</u>. [TDMSim: Enabling High-Density and Energy-Efficient GPU DRAM Caches with 2D-Materials for Data-Intensive Applications](https://conferences.computer.org/iscapub26/pdfs/5065-3nexm57sBmVa6MJtFTiSrb/506501b255/506501b255.pdf)
 
 - **[TACO'25]** Kanheng Jiang, Yongxin Lyu, Zhiyuan Zhang, Zengshi Wang, **<u>傅超</u>**, <u>Jun Han</u>. ["Thoth: Uncovering Data-Dependent Memory Access Patterns via Annotation-Directed Load Sampling"](https://dl.acm.org/doi/pdf/10.1145/3806835)
+
+- **[MEJ'26]** Jingyang Zheng, Huajin Sun, Yuning Zhan, **傅超**, Zhiyuan Zhang, Jun Han. ["Location-Aware Caching Mechanism for minimizing performance degradation induced by inefficient inter-chiplet data path"](https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=idFeW10AAAAJ&sortby=pubdate&citation_for_view=idFeW10AAAAJ:ufrVoPGSRksC)
 
 - **[MEJ'26]** Kaixuan Wang, Jiang Wang, **<u>傅超</u>**, <u>Jun Han</u>. ["SAVP: Self-validating secure speculation via address-based value prediction"](https://scholar.google.com/citations?view_op=view_citation&hl=en&user=idFeW10AAAAJ&sortby=pubdate&citation_for_view=idFeW10AAAAJ:eQOLeE2rZwMC)
 

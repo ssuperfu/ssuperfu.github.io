@@ -1,0 +1,9 @@
+[Unit]
+Description=Check personal homepage GitHub main every two minutes
+[Timer]
+OnBootSec=90s
+OnUnitInactiveSec=2min
+AccuracySec=10s
+Unit=mypage-deploy.service
+[Install]
+WantedBy=timers.target

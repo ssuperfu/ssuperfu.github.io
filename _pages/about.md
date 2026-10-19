@@ -43,6 +43,17 @@ I also emphasize **application-driven and industry-academia-oriented research**,
 </p>
 
 
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">ASP-DAC 2027</div><img src='{{ "/images/aspdac_2027.png" | relative_url }}' alt="S-cache directory architecture overview" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+[S-cache Directory: Efficient Sharer Tracking for Entry-Constrained Coherence Directories](https://easychair.org/smart-program/ASP-DAC2027/2027-01-25.html)
+
+Yufan Jia, Zhiyuan Zhang, Jingyang Zheng, **<u>Chao Fu</u>**, <u>Jun Han</u>
+
+- This work introduces an S-cache directory with sharer-precising mechanisms to reduce coherence directory area under limited entry budgets, with minimal traffic and performance overhead.
+</div>
+</div>
+
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">MICRO 2026</div><img src='{{ "/images/micro_2026.png" | relative_url }}' alt="TDMSim publication preview" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 

@@ -1,0 +1,10 @@
+[Unit]
+Description=Deploy personal homepage updates from GitHub main
+Wants=network-online.target
+After=network-online.target docker.service
+Requires=docker.service
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/python3 /opt/intro-site/automation/auto-deploy.py
+TimeoutStartSec=20min
+UMask=0027

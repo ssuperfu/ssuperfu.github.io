@@ -36,6 +36,17 @@ lang: zh
   <strong>Someone<sup>†</sup></strong> 表示共同一作；<strong><u>Someone</u></strong> 表示通讯作者。
 </p>
 
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">ASP-DAC 2027</div><img src='{{ "/images/aspdac_2027.png" | relative_url }}' alt="S-cache directory architecture overview" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+[S-cache Directory: Efficient Sharer Tracking for Entry-Constrained Coherence Directories](https://easychair.org/smart-program/ASP-DAC2027/2027-01-25.html)
+
+Yufan Jia, Zhiyuan Zhang, Jingyang Zheng, **<u>傅超</u>**, <u>Jun Han</u>
+
+- 该工作提出 S-cache 目录与共享者精化机制，在目录条目受限时高效跟踪共享者，以极低的流量和性能开销降低目录面积。
+</div>
+</div>
+
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">MICRO 2026</div><img src='{{ "/images/micro_2026.png" | relative_url }}' alt="SPMC publication preview" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 

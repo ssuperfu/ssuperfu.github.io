@@ -1,0 +1,25 @@
+services:
+  homepage:
+    image: personal-homepage:local
+    build:
+      context: .
+      args:
+        SITE_URL: ${SITE_URL:-http://intro.archois.cn}
+        DEBIAN_MIRROR: ${DEBIAN_MIRROR:-deb.debian.org}
+        GEM_MIRROR: ${GEM_MIRROR:-https://rubygems.org}
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:8090:80"
+    networks:
+      edge:
+        aliases:
+          - personal-homepage
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+networks:
+  edge:
+    external: true
+    name: npm_default

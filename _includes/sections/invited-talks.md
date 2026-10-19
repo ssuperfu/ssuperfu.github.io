@@ -1,3 +1,16 @@
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">2026.10</div><img src='{{ "/images/ciif_2026_talk.png" | relative_url }}' alt="Chao Fu presenting hands-on computer architecture and SoC design education at CIIF 2026" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+**Invited Talk on Hands-On RISC-V Architecture and SoC Education at CIIF 2026**
+
+<i class="fas fa-map-marker-alt" aria-hidden="true"></i> Shanghai, China
+
+At the Xuantie · Xinghuo Forum, presented a progression of hands-on experiments: RTL-level cache simulation with the SMART platform and Xuantie C910, YOLO convolution simulation, and a Gomoku-playing smart device built on the wujian100 SoC. The experiments connect cache behavior, memory hierarchy, and branch prediction with system integration and hardware–software co-design.
+
+[Event report](https://mp.weixin.qq.com/s/LE3wiS-T4N4hgVVmpG2T3g)
+</div>
+</div>
+
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">2026.08</div><img src='{{ "/images/swyt_talk.jpg" | relative_url }}' alt="Invited talk preview" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
