@@ -14,7 +14,7 @@ Presented RTL cache simulation, YOLO convolution, and wujian100-based Gomoku exp
 
 **Presents the Physical AI Data Intelligence Engine at the Shanghai Regional of the 2026 Shaoxing Education–Technology–Talent Innovation Commercialization Competition**
 
-<i class="fas fa-map-marker-alt" aria-hidden="true"></i> Shanghai, China
+<i class="fas fa-map-marker-alt" aria-hidden="true"></i> Shanghai, China · [News](https://mp.weixin.qq.com/s/tI7ZeZNp3kSzuTAh_dzIpw)
 
 The presentation introduces a full-stack data infrastructure that transforms real-world scenes and human actions into high-quality training data for Physical AI.
 </div>

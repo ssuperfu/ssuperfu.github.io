@@ -14,7 +14,7 @@
 
 **在 2026 绍兴教育科技人才一体化创新成果转化大赛上海赛区展示 Physical AI 数据智能引擎**
 
-<i class="fas fa-map-marker-alt" aria-hidden="true"></i> Shanghai, China
+<i class="fas fa-map-marker-alt" aria-hidden="true"></i> Shanghai, China · [报道](https://mp.weixin.qq.com/s/tI7ZeZNp3kSzuTAh_dzIpw)
 
 报告介绍一套全栈数据基础设施，将真实世界场景与人类动作转化为用于 Physical AI 训练的高质量数据。
 </div>
