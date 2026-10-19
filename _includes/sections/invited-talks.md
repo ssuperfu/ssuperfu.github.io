@@ -3,11 +3,9 @@
 
 **Invited Talk on Hands-On RISC-V Architecture and SoC Education at CIIF 2026**
 
-<i class="fas fa-map-marker-alt" aria-hidden="true"></i> Shanghai, China
+<i class="fas fa-map-marker-alt" aria-hidden="true"></i> Shanghai, China · [News](https://mp.weixin.qq.com/s/LE3wiS-T4N4hgVVmpG2T3g)
 
-At the Xuantie · Xinghuo Forum, presented a progression of hands-on experiments: RTL-level cache simulation with the SMART platform and Xuantie C910, YOLO convolution simulation, and a Gomoku-playing smart device built on the wujian100 SoC. The experiments connect cache behavior, memory hierarchy, and branch prediction with system integration and hardware–software co-design.
-
-[Event report](https://mp.weixin.qq.com/s/LE3wiS-T4N4hgVVmpG2T3g)
+Presented RTL cache simulation, YOLO convolution, and wujian100-based Gomoku experiments, connecting RISC-V microarchitecture concepts with SoC integration and hardware–software co-design.
 </div>
 </div>
 

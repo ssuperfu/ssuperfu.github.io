@@ -3,11 +3,9 @@
 
 **在 CIIF 2026「玄铁·星火」论坛分享 RISC-V 体系结构与 SoC 实践教学**
 
-<i class="fas fa-map-marker-alt" aria-hidden="true"></i> Shanghai, China
+<i class="fas fa-map-marker-alt" aria-hidden="true"></i> Shanghai, China · [报道](https://mp.weixin.qq.com/s/LE3wiS-T4N4hgVVmpG2T3g)
 
-分享基于 SMART 仿真平台与玄铁 C910 的 RTL 级微架构教学实践。通过缓存仿真、YOLO 卷积函数仿真和基于 wujian100 SoC 的五子棋智能设备开发，串联缓存性能、层次化存储与分支预测，并逐步拓展至系统集成和软硬件协同设计。
-
-[活动报道](https://mp.weixin.qq.com/s/LE3wiS-T4N4hgVVmpG2T3g)
+分享缓存仿真、YOLO 卷积仿真与 wujian100 五子棋实验，贯通微架构分析、SoC 集成和软硬件协同设计。
 </div>
 </div>
 
