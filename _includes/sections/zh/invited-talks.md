@@ -48,7 +48,7 @@
 
 **RISC-V SoC 设计与芯片体系结构培训特邀讲师**
 
-<i class="fas fa-map-marker-alt" aria-hidden="true"></i> Shenzhen, China
+<i class="fas fa-map-marker-alt" aria-hidden="true"></i> Shenzhen, China · [报道](https://mp.weixin.qq.com/s/wvf8dABH0nR6iI6-E7YeSw)
 
 开展为期三天的受邀培训课程，将 RISC-V 体系结构基础与处理器及 SoC 设计实验相结合，帮助学员建立从理论到实现的端到端理解。
 </div>

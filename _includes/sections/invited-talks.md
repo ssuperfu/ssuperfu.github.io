@@ -48,7 +48,7 @@ Presented our work on TDMSim in a 20-minute conference talk, highlighting how 2D
 
 **Invited Lecturer for RISC-V SoC Design and Chip Architecture Training**
 
-<i class="fas fa-map-marker-alt" aria-hidden="true"></i> Shenzhen, China
+<i class="fas fa-map-marker-alt" aria-hidden="true"></i> Shenzhen, China · [News](https://mp.weixin.qq.com/s/wvf8dABH0nR6iI6-E7YeSw)
 
 Gave a three-day invited training course that bridged RISC-V architecture fundamentals with practical processor and SoC design experiments, helping participants build an end-to-end understanding from theory to implementation.
 </div>
