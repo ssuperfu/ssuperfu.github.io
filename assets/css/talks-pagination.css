@@ -1,0 +1,54 @@
+.talks-pagination__list {
+  scroll-margin-top: 1rem;
+}
+
+.talks-pagination__list:focus {
+  outline: none;
+}
+
+.talks-pagination__controls {
+  clear: both;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1.5rem 0;
+  font-size: 0.85em;
+}
+
+.talks-pagination__controls button {
+  appearance: none;
+  border: 1px solid #d6e0ea;
+  border-radius: 6px;
+  padding: 0.5em 0.9em;
+  color: #245b8a;
+  background: #fff;
+  font: inherit;
+  cursor: pointer;
+}
+
+.talks-pagination__controls button:hover:not(:disabled),
+.talks-pagination__controls button:focus-visible {
+  background: #eef5fb;
+  border-color: #245b8a;
+}
+
+.talks-pagination__controls button:disabled {
+  color: #767676;
+  cursor: default;
+  opacity: 0.6;
+}
+
+.talks-pagination__controls [data-talk-status] {
+  white-space: nowrap;
+}
+
+.no-js .talks-pagination__controls {
+  display: none;
+}
+
+@media (max-width: 400px) {
+  .talks-pagination__controls {
+    gap: 0.5rem;
+  }
+}

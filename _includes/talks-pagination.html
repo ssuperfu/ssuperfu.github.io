@@ -1,0 +1,37 @@
+{% assign page_size = 10 %}
+{% assign card_start = "<div class='paper-box'>" %}
+{% capture talks_source %}{% if page.lang == 'zh' %}{% include sections/zh/invited-talks.md %}{% else %}{% include sections/invited-talks.md %}{% endif %}{% endcapture %}
+{% assign parts = talks_source | split: card_start %}
+{% assign cards = parts | slice: 1, parts.size %}
+{% assign page_count = cards.size | plus: 9 | divided_by: page_size %}
+<div class="talks-pagination" data-talks-pagination data-page-count="{{ page_count }}" data-lang="{{ page.lang | default: 'en' }}">
+  <div class="talks-pagination__list" data-talk-list tabindex="-1">
+    {% for card in cards limit: page_size %}
+      {% assign markup = card_start | append: card | replace: '<img ', '<img loading="lazy" decoding="async" ' %}
+      {{ markup | markdownify }}
+    {% endfor %}
+  </div>
+  {% if page_count > 1 %}
+    {% for card in cards offset: page_size %}
+      {% assign slot = forloop.index0 | modulo: page_size %}
+      {% if slot == 0 %}
+        {% assign number = forloop.index0 | divided_by: page_size | plus: 2 %}
+        <template data-talk-page="{{ number }}">
+      {% endif %}
+      {% assign markup = card_start | append: card | replace: '<img ', '<img loading="lazy" decoding="async" ' %}
+      {{ markup | markdownify }}
+      {% if slot == 9 or forloop.last %}</template>{% endif %}
+    {% endfor %}
+    <nav class="talks-pagination__controls" aria-label="{% if page.lang == 'zh' %}邀请报告分页{% else %}Invited talks pages{% endif %}">
+      <button type="button" data-talk-prev disabled>{% if page.lang == 'zh' %}上一页{% else %}Previous{% endif %}</button>
+      <span data-talk-status role="status" aria-live="polite">{% if page.lang == 'zh' %}第 1 / {{ page_count }} 页{% else %}Page 1 of {{ page_count }}{% endif %}</span>
+      <button type="button" data-talk-next>{% if page.lang == 'zh' %}下一页{% else %}Next{% endif %}</button>
+    </nav>
+    <noscript>
+      {% for card in cards offset: page_size %}
+        {% assign markup = card_start | append: card | replace: '<img ', '<img loading="lazy" decoding="async" ' %}
+        {{ markup | markdownify }}
+      {% endfor %}
+    </noscript>
+  {% endif %}
+</div>

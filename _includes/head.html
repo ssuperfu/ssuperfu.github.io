@@ -12,6 +12,9 @@
 
 <!-- For all browsers -->
 <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+{% if page.talk_pagination %}
+<link rel="stylesheet" href="{{ '/assets/css/talks-pagination.css' | relative_url }}">
+{% endif %}
 
 <meta http-equiv="cleartype" content="on">
 <head>

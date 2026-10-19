@@ -2,3 +2,7 @@
 
 {% include analytics.html %}
 {% include fetch_google_scholar_stats.html %}
+
+{% if page.talk_pagination %}
+<script src="{{ '/assets/js/talks-pagination.js' | relative_url }}" defer></script>
+{% endif %}
