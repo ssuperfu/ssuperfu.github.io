@@ -9,6 +9,17 @@
 </div>
 </div>
 
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">2026.10</div><img src='{{ "/images/yuecheng_2026_interview.jpg" | relative_url }}' alt="傅超接受越城新闻采访，介绍具身智能场景生成与仿真" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+**接受《越城新闻》采访：具身智能场景生成与仿真**
+
+<i class="fas fa-map-marker-alt" aria-hidden="true"></i> Shaoxing, China · [采访视频（1:52 起）](https://app.sxycnews.cn/webDetails/series?id=22022711&tenantId=31&uid=5ed632c3a61d5608a86125d2&videoid=166481)
+
+接受《越城新闻》采访，介绍面向具身智能的高效虚拟场景生成与仿真技术。
+</div>
+</div>
+
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">2026.09</div><img src='{{ "/images/shaoxing_2026_final_talk.png" | relative_url }}' alt="傅超在 2026 绍兴创新成果转化大赛总决赛路演" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 

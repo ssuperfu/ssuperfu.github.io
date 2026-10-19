@@ -9,6 +9,17 @@ Presented RTL cache simulation, YOLO convolution, and wujian100-based Gomoku exp
 </div>
 </div>
 
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">2026.10</div><img src='{{ "/images/yuecheng_2026_interview.jpg" | relative_url }}' alt="Chao Fu interviewed by Yuecheng News about embodied AI simulation" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+**Yuecheng News Interview on Embodied AI Simulation**
+
+<i class="fas fa-map-marker-alt" aria-hidden="true"></i> Shaoxing, China · [Video (from 1:52)](https://app.sxycnews.cn/webDetails/series?id=22022711&tenantId=31&uid=5ed632c3a61d5608a86125d2&videoid=166481)
+
+Interviewed by Yuecheng News about efficiently generating realistic virtual scenes to support embodied AI development.
+</div>
+</div>
+
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">2026.09</div><img src='{{ "/images/shaoxing_2026_final_talk.png" | relative_url }}' alt="Chao Fu presenting the Physical AI Data Engine at the 2026 Shaoxing competition finals" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
