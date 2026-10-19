@@ -72,7 +72,7 @@ Delivered an invited talk at the 2025 RISC-V Industry Development Conference, in
 
 **Invited Talk on Hardware-in-the-Loop Co-Simulation for Embodied Intelligence**
 
-<i class="fas fa-map-marker-alt" aria-hidden="true"></i> Taiyuan, China
+<i class="fas fa-map-marker-alt" aria-hidden="true"></i> Taiyuan, China · [News](https://mp.weixin.qq.com/s/vEU3nWqiLkl-a0AIl0tBiw)
 
 Gave a conference talk at the 29th CCF Annual Conference on Computer Engineering and Technology, introducing a unified simulation flow that integrates AirSim, gem5, and FPGA-based hardware validation to bridge physical-world interaction, AI algorithm execution, and processor architecture exploration for embodied intelligent systems.
 </div>

@@ -72,7 +72,7 @@
 
 **面向具身智能的硬件在环协同仿真邀请报告**
 
-<i class="fas fa-map-marker-alt" aria-hidden="true"></i> Taiyuan, China
+<i class="fas fa-map-marker-alt" aria-hidden="true"></i> Taiyuan, China · [报道](https://mp.weixin.qq.com/s/vEU3nWqiLkl-a0AIl0tBiw)
 
 在第 29 届 CCF 计算机工程与工艺年会作会议报告，介绍融合 AirSim、gem5 与 FPGA 硬件验证的统一仿真流程，用于连接物理世界交互、AI 算法执行与面向具身智能系统的处理器体系结构探索。
 </div>
